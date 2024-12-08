@@ -9,7 +9,7 @@ interface FeatureCards {
 
 const FeatureCard = (card: FeatureCards) => {
   return (
-    <div className="w-[348px] h-[606px] py-5">
+    <div className="w-[100%] h-[100%] md:w-[348px] md:h-[606px] py-5">
       <div className="relative">
         <Image
           src={card.imagePath} // Corrected image path
@@ -27,8 +27,8 @@ const FeatureCard = (card: FeatureCards) => {
         </div>
       </div>
 
-      <div className="flex flex-col w-[348px] h-[306px] shadow-md space-x-4">
-        <div className="flex w-[159px] h-[16px] space-x-4 ml-4 mt-7">
+      <div className="flex flex-col w-[348px] h-[306px] shadow-md space-x-0 md:space-x-4">
+        <div className="flex w-[159px] h-[16px] space-x-4 ml-0 md:ml-4 mt-7">
           <h5
             className={`${montserrat.className}items-center text-center font-normal text-[12px] text-myLightBlue`}
           >
@@ -68,7 +68,7 @@ const FeatureCard = (card: FeatureCards) => {
           <div className="w-[98px] h-[16px] flex justify-between">
             <FaClock className="w-[13px] h-[13px] text-myBlue" />
             <h4
-              className={`${montserrat.className}items-center text-center font-normal text-[12px] text-myGrey`}
+              className={`${montserrat.className}items-center text-center font-normal text-[12px]  text-myGrey`}
             >
               22 April 2021
             </h4>

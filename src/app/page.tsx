@@ -12,15 +12,12 @@ import Footer1 from "./components/footer";
 export default function Home() {
   return (
     <div>
-         
-        <Carousel/>
-      <Card/>
-         <ProductCard/>
-      <Carousel_2/>
-  <Carousel_3/>
-{/*                  <FeaturePost/> */}
-       
-
+      <Carousel />
+      <Card />
+      <ProductCard />
+      <Carousel_2 />
+      <Carousel_3 />
+      <FeaturePost />
     </div>
   );
 }

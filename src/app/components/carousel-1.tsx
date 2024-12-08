@@ -4,40 +4,36 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 const Carousel = () => {
   return (
     <div
-      className="w-full h-full items-center bg-cover bg-center"
+      className="w-full h-screen items-center bg-cover bg-center"
       style={{
         backgroundImage: "url('/images/hero-image.jpg')", // Update with your background image path
       }}
     >
-      {/* Main container */}
-      <div className="w-full h-full flex items-center justify-center">
-        {/* Row */}
-        <div className="w-full sm:px-6 md:px-12 lg:px-32 py-20 sm:py-16 md:py-28">
-          {/* Placeholder Divs */}
-          <div className="w-full h-full flex flex-col justify-center items-start mx-0 sm:mx-0  space-y-4 sm:space-y-2">
-            <h5
-              className={`${montserrat.className} font-bold text-xs sm:text-sm md:text-lg lg:text-xl text-white`}
-            >
-              SUMMER 2020
-            </h5>
-            <h1
-              className={`${montserrat.className} font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white`}
-            >
-              NEW COLLECTION
-            </h1>
-            <h4
-              className={`${montserrat.className} font-normal text-base sm:text-lg md:text-xl lg:text-2xl text-white`}
-            >
-              We know how large objects will act, but things on a small scale.
-            </h4>
-
-            <div className="w-[221px] h-[62px] rounded py-2 sm:w-[180px] sm:h-[50px] md:w-[200px] md:h-[55px] bg-myGreen flex items-center justify-center">
-              <h3
-                className={`${montserrat.className} font-bold text-lg sm:text-xl md:text-2xl text-center text-white`}
-              >
-                SHOP NOW
-              </h3>
-            </div>
+      {/* Main Container */}
+      <div className="flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+        {/* Content Wrapper */}
+        <div className="w-full max-w-[800px] text-center px-4 sm:px-6 lg:px-8 py-10 sm:py-16 md:py-20">
+          {/* Header */}
+          <h5
+            className={`${montserrat.className} font-bold text-xs sm:text-sm md:text-lg lg:text-xl text-white mb-4`}
+          >
+            SUMMER 2020
+          </h5>
+          <h1
+            className={`${montserrat.className} font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight`}
+          >
+            NEW COLLECTION
+          </h1>
+          <p
+            className={`${montserrat.className} font-normal text-sm sm:text-base md:text-lg lg:text-xl text-white mt-4`}
+          >
+            We know how large objects will act, but things on a small scale.
+          </p>
+          {/* Button */}
+          <div className="mt-6">
+            <button className="bg-myGreen text-white font-bold py-3 px-6 rounded sm:py-2 sm:px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 text-sm sm:text-base md:text-lg lg:text-xl">
+              SHOP NOW
+            </button>
           </div>
         </div>
       </div>

@@ -4,37 +4,35 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 const FeaturePost = () => {
   return (
-    <div className="items-center my-14">
-      {/* h2 #feature-section.1 */}
-      <div className="w-[691px] h-4-[134] items-center text-center mx-auto">
+    <div className="items-center my-14 px-4 sm:px-6 md:px-10 lg:px-24">
+      {/* Header Section */}
+      <div className="w-full max-w-4xl mx-auto text-center">
         <h6
-          className={`${montserrat.className}items-center text-center font-bold text-[14px] text-myBlue`}
+          className={`${montserrat.className} font-bold text-sm sm:text-base md:text-lg text-myBlue`}
         >
           Practice Advice
         </h6>
 
         <h3
-          className={`${montserrat.className} font-normal text-[40px] text-center text-myDark`}
+          className={`${montserrat.className} font-normal text-2xl sm:text-3xl md:text-4xl text-myDark mt-2`}
         >
           Featured Posts
         </h3>
 
         <p
-          className={`${montserrat.className}items-center text-center font-normal text-[14px]  text-myGrey mb-5`}
+          className={`${montserrat.className} font-normal text-xs sm:text-sm md:text-base text-myGrey mt-4`}
         >
           Problems trying to resolve the conflict between the two major realms
-          of Classical physics: Newtonian mechanics
+          of Classical physics: Newtonian mechanics.
         </p>
       </div>
 
-      {/* Feature Post */}
-      <div className="grid grid-cols-3 px-24">
+      {/* Feature Post Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         <FeatureCard imagePath="/images/featureCard-1.png" />
         <FeatureCard imagePath="/images/featureCard-2.png" />
         <FeatureCard imagePath="/images/featureCard-3.png" />
       </div>
-      
-
     </div>
   );
 };
