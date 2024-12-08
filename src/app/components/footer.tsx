@@ -1,5 +1,4 @@
-
-import { Inter, Montserrat, Poppins } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 
