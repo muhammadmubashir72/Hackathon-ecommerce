@@ -16,6 +16,7 @@ export default {
         myDarkGreen:"#23856D",
         myOrange:"#E77C40",
         myLightBlue:"#8EC2F2",
+        myBlueImage:"#00b3dd",
         myDarkOrange:"#E74040",
         
         

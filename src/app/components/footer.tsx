@@ -221,36 +221,33 @@ export default function Footer() {
 
         {/* Join Mailing List Section */}
         <div className="flex flex-col space-y-4 w-full sm:w-[509px]">
-          <h5
-            className={`${montserrat.className} font-bold text-[16px] text-myDark`}
-          >
-            Get In Touch
-          </h5>
-          <div className="flex items-center w-full lg:w-[321px] lg:h-[58px] border border-[#E6E6E6] rounded-lg overflow-hidden">
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="bg-transparent text-white px-4 py-3 flex-grow focus:outline-none md:w-full lg:w-[509px]"
-            />
-            <div className="w-[117px] h-[58px]">
-              <button className=" text-white bg-myBlue h-[58px] w-[117px] font-normal text-[14px] mx-auto pr-6 py-3">
-                Subscribe
-              </button>
-            </div>
-
-          </div>
-          <p
-        className={`${montserrat.className} font-normal text-[12px] text-myGrey mt-10`}
-      >
-        Lore imp sum dolor Amit
-      </p>
-        </div>
-      </div>
+  <h5 className={`${montserrat.className} font-bold text-[16px] text-myDark`}>
+    Get In Touch
+  </h5>
+  <div className="flex items-center lg:w-[321px] h-[48px] lg-h-[58] w-[250px]  border border-[#E6E6E6] rounded-lg overflow-hidden">
+    <input
+      type="email"
+      placeholder="Your Email"
+      className="bg-transparent text-white px-3 py-3 lg:px-4 lg:py-3 focus:outline-none w-full"
+    />
+    <div className="flex-shrink-0">
+      <button className="text-white bg-myBlue px-3 py-3 lg:px-6 lg:py-3 lg:w-full  lg-[58] h-[58] w-[97px] font-normal text-[14px]">
+        Subscribe
+      </button>
+    </div>
+  </div>
+  <p
+    className={`${montserrat.className} font-normal text-[12px] text-myGrey`}
+  >
+    Lore imp sum dolor Amit
+  </p>
+</div>
+  </div>
 
       <p
-        className={`${montserrat.className} font-bold text-[14px] text-myGrey mt-10`}
+        className={`${montserrat.className} w-[183] h-[48px] lg:w-full lg:h-full font-bold text-[12px] lg:text-[14px] text-center text-myGrey mt-10`}
       >
-        Made With Love By Finland All Right Reserved{" "}
+        Made With Love By Finland All Right Reserved
       </p>
     </div>
   );

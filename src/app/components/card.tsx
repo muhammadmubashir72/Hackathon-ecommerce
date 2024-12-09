@@ -4,7 +4,7 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 const Card = () => {
   return (
-    <div className="items-center my-14">
+    <div className="items-center mx-auto my-14">
       {/* h2 #feature-section.1 */}
 
       <h2
