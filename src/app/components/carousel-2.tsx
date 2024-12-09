@@ -1,4 +1,5 @@
 import { Montserrat } from "next/font/google";
+import Image from "next/image";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 const Carousel_2 = () => {
@@ -41,7 +42,7 @@ const Carousel_2 = () => {
 
         {/* Image Section */}
         <div className="w-full lg:w-[510px] lg:h-[685px] mt-10 lg:mt-0">
-          <img
+          <Image
             src="/images/shop-hero-2-png-picture-1.png"
             alt="Product"
             className="w-full h-full object-contain"

@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Header from "./components/header";
 import Carousel from "./components/carousel-1";
 import Card from "./components/card";
 import ProductCard from "./components/product";
