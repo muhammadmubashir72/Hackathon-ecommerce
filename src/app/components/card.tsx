@@ -18,86 +18,84 @@ const Card = () => {
         Problems trying to resolve the conflict between{" "}
       </p>
 
-
-
       {/* row */}
 
-<div className="flex flex-wrap gap-4 items-center justify-center my-10">
-  {/* Image 1 */}
-  <div className="relative">
-    <Image
-      src="/images/card-image-1.png" // Corrected image path
-      alt="card-image-1"
-      className="object-cover"
-      width={510}
-      height={500}
-    />
-    <div className="w-[170px] h-[48px] absolute bottom-5 left-10 bg-white text-center px-4 py-3 shadow-lg">
-      <p 
-           className={`${montserrat.className}items-center text-center font-bold text-[16px] text-myDark`}
+      <div className="flex flex-wrap gap-4 items-center justify-center my-10">
+        {/* Image 1 */}
+        <div className="relative">
+          <Image
+            src="/images/card-image-1.png" // Corrected image path
+            alt="card-image-1"
+            className="object-cover"
+            width={510}
+            height={500}
+          />
+          <div className="w-[170px] h-[48px] absolute bottom-5 left-10 bg-white text-center px-4 py-3 shadow-lg">
+            <p
+              className={`${montserrat.className}items-center text-center font-bold text-[16px] text-myDark`}
+            >
+              MEN
+            </p>
+          </div>
+        </div>
 
-      >MEN</p>
-    </div>
-  </div>
+        {/* Image 2 */}
+        <div className="relative">
+          <Image
+            src="/images/card-image-2.png" // Corrected image path
+            alt="card-image-2"
+            className="w-[240px] h-[500px] object-cover"
+            width={240}
+            height={500}
+          />
+          <div className="w-[170px] h-[48px] absolute bottom-5 left-10 bg-white mx-auto text-center px-4 py-3 shadow-lg">
+            <h5
+              className={`${montserrat.className}items-center text-center font-bold text-[16px] text-myDark`}
+            >
+              WOMEN
+            </h5>
+          </div>
+        </div>
 
-  {/* Image 2 */}
-  <div className="relative">
-    <Image
-      src="/images/card-image-2.png" // Corrected image path
-      alt="card-image-2"
-      className="w-[240px] h-[500px] object-cover"
-      width={240}
-      height={500}
-    />
-    <div className="w-[170px] h-[48px] absolute bottom-5 left-10 bg-white mx-auto text-center px-4 py-3 shadow-lg">
-      <h5 
-           className={`${montserrat.className}items-center text-center font-bold text-[16px] text-myDark`}
->WOMEN</h5>
-    </div>
-  </div>
+        {/* Nested grid */}
+        <div className="flex flex-col gap-4">
+          {/* Image 3 */}
+          <div className="relative">
+            <Image
+              src="/images/card-image-3.jpg" // Corrected image path
+              alt="card-image-3"
+              className="w-[240px] h-[242px] object-cover"
+              width={240}
+              height={242}
+            />
+            <div className="w-[170px] h-[48px] absolute bottom-5 left-10 bg-white mx-auto text-center px-4 py-3 shadow-lg">
+              <h5
+                className={`${montserrat.className}items-center text-center font-bold text-[16px]  text-myDark`}
+              >
+                ACCESSORIES
+              </h5>
+            </div>
+          </div>
 
-  {/* Nested grid */}
-  <div className="flex flex-col gap-4">
-    {/* Image 3 */}
-    <div className="relative">
-      <Image
-        src="/images/card-image-3.jpg" // Corrected image path
-        alt="card-image-3"
-        className="w-[240px] h-[242px] object-cover"
-        width={240}
-        height={242}
-      />
-      <div className="w-[170px] h-[48px] absolute bottom-5 left-10 bg-white mx-auto text-center px-4 py-3 shadow-lg">
-        <h5 
-             className={`${montserrat.className}items-center text-center font-bold text-[16px]  text-myDark`}
-
-        >ACCESSORIES
-        
-        </h5>
-      </div>
-    </div>
-
-    {/* Image 4 */}
-    <div className="relative">
-      <Image
-        src="/images/card-image-4.png" // Corrected image path
-        alt="card-image-4"
-        className="w-[240px] h-[242px] object-cover"
-        width={240}
-        height={242}
-      />
-      <div className="w-[170px] h-[48px] absolute bottom-5 left-10 bg-white mx-auto text-center px-4 py-3 shadow-lg">
-        <h5 
+          {/* Image 4 */}
+          <div className="relative">
+            <Image
+              src="/images/card-image-4.png" // Corrected image path
+              alt="card-image-4"
+              className="w-[240px] h-[242px] object-cover"
+              width={240}
+              height={242}
+            />
+            <div className="w-[170px] h-[48px] absolute bottom-5 left-10 bg-white mx-auto text-center px-4 py-3 shadow-lg">
+              <h5
                 className={`${montserrat.className}items-center text-center font-bold text-[16px] text-myDark`}
-
-        >KIDS</h5>
+              >
+                KIDS
+              </h5>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
-
     </div>
   );
 };

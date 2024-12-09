@@ -45,6 +45,8 @@ const Carousel_2 = () => {
           <Image
             src="/images/shop-hero-2-png-picture-1.png"
             alt="Product"
+            width={510}
+            height={500}
             className="w-full h-full object-contain"
           />
         </div>

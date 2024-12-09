@@ -6,7 +6,7 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 export default function Footer() {
   return (
-    <div className="bg-white text-white px-14 py-[60px] md:w-full lg:h-[380px] w-full justify-between">
+    <div className="bg-white text-white py-28 px-14 md:w-full lg:h-[380px] w-full justify-between">
 
       <div className="w-full h-[58px] flex justify-between px-10 space-x-5 sm:space-x-0 ">
         <div>
@@ -23,7 +23,7 @@ export default function Footer() {
             alt="Logo"
             width={24}
             height={24}
-            className="w-[20px] h-[20px] md:w-[24px] md:h-[24px]"
+            className="w-[23px] h-[20px] md:w-[24px] md:h-[24px]"
           />
           <Image
             src="/images/instagram1.png"
@@ -56,7 +56,7 @@ export default function Footer() {
           </h5>
           <ul className={`${montserrat.className} space-y-2 text-sm`}>
             <Link href="">
-              {" "}
+            
               <li
                 className={`${montserrat.className} font-bold text-[14px] text-myGrey`}
               >
@@ -64,7 +64,7 @@ export default function Footer() {
               </li>
             </Link>
             <Link href="">
-              {" "}
+  
               <li
                 className={`${montserrat.className} font-bold text-[14px] text-myGrey`}
               >
@@ -72,7 +72,7 @@ export default function Footer() {
               </li>
             </Link>
             <Link href="">
-              {" "}
+              
               <li
                 className={`${montserrat.className} font-bold text-[14px] text-myGrey`}
               >
@@ -80,7 +80,7 @@ export default function Footer() {
               </li>
             </Link>
             <Link href="">
-              {" "}
+            
               <li
                 className={`${montserrat.className} font-bold text-[14px] text-myGrey`}
               >
@@ -99,7 +99,7 @@ export default function Footer() {
           </h5>
           <ul className={`${montserrat.className} space-y-2 text-sm`}>
             <Link href="">
-              {" "}
+            
               <li
                 className={`${montserrat.className} font-bold text-[14px] text-myGrey`}
               >
@@ -107,7 +107,7 @@ export default function Footer() {
               </li>
             </Link>
             <Link href="">
-              {" "}
+            
               <li
                 className={`${montserrat.className} font-bold text-[14px] text-myGrey`}
               >
@@ -115,7 +115,7 @@ export default function Footer() {
               </li>
             </Link>
             <Link href="">
-              {" "}
+              
               <li
                 className={`${montserrat.className} font-bold text-[14px] text-myGrey`}
               >
@@ -123,7 +123,7 @@ export default function Footer() {
               </li>
             </Link>
             <Link href="">
-              {" "}
+            
               <li
                 className={`${montserrat.className} font-bold text-[14px] text-myGrey`}
               >
@@ -170,7 +170,7 @@ export default function Footer() {
               <li
                 className={`${montserrat.className} font-bold text-[14px] text-myGrey`}
               >
-                Unlimited Support{" "}
+                Unlimited Support
               </li>
             </Link>
           </ul>
@@ -185,35 +185,35 @@ export default function Footer() {
           </h5>
           <ul className={`${montserrat.className} space-y-2 text-sm`}>
             <Link href="">
-              {" "}
+              
               <li
                 className={`${montserrat.className} font-bold text-[14px] text-myGrey`}
               >
-                IOS & Android{" "}
+                IOS & Android
               </li>
             </Link>
             <Link href="">
-              {" "}
+              
               <li
                 className={`${montserrat.className} font-bold text-[14px] text-myGrey`}
               >
-                Watch a Demo{" "}
+                Watch a Demo
               </li>
             </Link>
             <Link href="">
-              {" "}
+              
               <li
                 className={`${montserrat.className} font-bold text-[14px] text-myGrey`}
               >
-                Customers{" "}
+                Customers
               </li>
             </Link>
             <Link href="">
-              {" "}
+              
               <li
                 className={`${montserrat.className} font-bold text-[14px] text-myGrey`}
               >
-                API{" "}
+                API
               </li>
             </Link>
           </ul>
