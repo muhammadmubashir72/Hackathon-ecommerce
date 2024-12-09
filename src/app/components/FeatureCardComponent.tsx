@@ -67,7 +67,7 @@ const FeatureCard = (card: FeatureCards) => {
               className={`${montserrat.className}items-center text-center font-normal text-[12px]  text-myGrey`}
             >
               22 April 2021
-            </h4>{" "}
+            </h4>
           </div>
           <div className="flex items-center gap-2">
             <Image
@@ -80,7 +80,7 @@ const FeatureCard = (card: FeatureCards) => {
               className={`${montserrat.className}items-center text-center font-normal text-[12px] text-myGrey`}
             >
               10 comments
-            </h4>{" "}
+            </h4>
           </div>
         </div>
         <div className="flex items-center gap-2 mt-4 text-myBlue">
