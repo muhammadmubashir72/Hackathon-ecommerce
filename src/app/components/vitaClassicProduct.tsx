@@ -4,10 +4,7 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 const Carousel_2 = () => {
   return (
-    <div
-      className="w-full h-auto flex items-center bg-myDarkGreen bg-no-repeat bg-right px-4 sm:px-8 lg:px-16 py-10 lg:py-20"
-      
-    >
+    <div className="w-full h-auto flex items-center bg-myDarkGreen bg-no-repeat bg-right px-4 sm:px-8 lg:px-16 py-10 lg:py-20">
       {/* Main Container */}
       <div className="flex flex-wrap lg:flex-nowrap items-center w-full max-w-7xl mx-auto">
         {/* Content Section */}

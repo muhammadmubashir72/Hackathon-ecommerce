@@ -15,18 +15,18 @@ const Card = () => {
       <p
         className={`${montserrat.className} font-normal text-[14px] text-center text-myDark`}
       >
-        Problems trying to resolve the conflict between{" "}
+        Problems trying to resolve the conflict between
       </p>
 
       {/* row */}
 
-      <div className="flex flex-wrap gap-4 items-center justify-center my-10">
+      <div className="flex flex-wrap gap-4 items-center justify-center mt-7">
         {/* Image 1 */}
         <div className="relative">
           <Image
             src="/images/card-image-1.png" // Corrected image path
             alt="card-image-1"
-            className="object-cover"
+            className="object-cover w-full h-auto md:w-[510px] md:h-[500px]"
             width={510}
             height={500}
           />
@@ -44,7 +44,7 @@ const Card = () => {
           <Image
             src="/images/card-image-2.png" // Corrected image path
             alt="card-image-2"
-            className="w-[240px] h-[500px] object-cover"
+            className="w-[255] h-[500px] md:w-[240px] md:h-[500px] object-cover"
             width={240}
             height={500}
           />
@@ -64,7 +64,7 @@ const Card = () => {
             <Image
               src="/images/card-image-3.jpg" // Corrected image path
               alt="card-image-3"
-              className="w-[240px] h-[242px] object-cover"
+              className="w-[255] h-[500px] md:w-[240px] md:h-[500px] object-cover"
               width={240}
               height={242}
             />
@@ -82,7 +82,7 @@ const Card = () => {
             <Image
               src="/images/card-image-4.png" // Corrected image path
               alt="card-image-4"
-              className="w-[240px] h-[242px] object-cover"
+              className="w-[255] h-[500px] md:w-[240px] md:h-[500px] object-cover"
               width={240}
               height={242}
             />

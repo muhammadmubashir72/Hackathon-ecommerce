@@ -1,20 +1,19 @@
-import Carousel from "./components/carousel-1";
-import Card from "./components/card";
+import Carousel from "./components/newCollection";
+import Card from "./components/editorsPick";
 import ProductCard from "./components/product";
-import Carousel_2 from "./components/carousel-2";
-import Carousel_3 from "./components/carousel-3";
-import FeaturePost from "./components/featurePost";
-
+import Carousel_2 from "./components/vitaClassicProduct";
+import Carousel_3 from "./components/neuralUniverse";
+import FeaturePost from "./components/featureProduct";
 
 export default function Home() {
   return (
     <div>
       <Carousel />
-       <Card />
+      <Card />
       <ProductCard />
-     <Carousel_2 />
-       <Carousel_3 />
-     <FeaturePost />
+      <Carousel_2 />
+      <Carousel_3 />
+      <FeaturePost />
     </div>
   );
 }
