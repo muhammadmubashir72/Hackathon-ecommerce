@@ -41,9 +41,9 @@ export default function Footer() {
           />
         </div>
       </div>
-      {/* <div>
+      <div className="md:hidden">
         <hr className="border-t-[1px] border-myGrey w-full mb-8" />
-      </div> */}
+      </div>
 
       <div className="px-14 py-5 sm:flex flex-col md:flex-row lg:flex-row sm:space-x-10">
         {/* Company Info Section */}
@@ -230,11 +230,14 @@ export default function Footer() {
         </div>
       </div>
 
-      <p
-        className={`${montserrat.className} mx-auto items-center w-[80%] h-full lg:w-full lg:h-full font-bold text-[12px] lg:text-[14px] text-center text-myGrey mt-10`}
+<div className="bg-myGrey/5">
+<p 
+        className={`${montserrat.className} mx-auto items-center w-[80%] h-full lg:w-full lg:h-full font-bold text-[12px] lg:text-[14px] text-center text-myGrey mt-10 py-5`}
       >
         Made With Love By Mubashir Saeedi All Right Reserved.
       </p>
+
+</div>
     </div>
   );
 }
