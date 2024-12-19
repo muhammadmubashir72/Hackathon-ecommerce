@@ -18,8 +18,10 @@ export default {
         myLightBlue:"#8EC2F2",
         myBlueImage:"#00b3dd",
         myDarkOrange:"#E74040",
-        
-        
+        myImageBackground:"#ffe9ea",
+        myImageBackground2: "#967df3",
+        myGreyBackground:"#FAFAFA",
+        mybackgroundblue:"#2A7CC7",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
