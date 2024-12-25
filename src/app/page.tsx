@@ -10,11 +10,8 @@ import TopHeader from "./Home_Page/TopHeader";
 export default function Home() {
   return (
     <div>
-      {/* <Header /> */}
-
-      <Header />
-
       <TopHeader />
+      <Header />
       <Carousel />
       <Card />
       <ProductCard />

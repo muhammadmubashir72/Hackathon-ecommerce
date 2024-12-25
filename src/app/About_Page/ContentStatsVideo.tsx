@@ -41,19 +41,19 @@ const ContentStatsVideo = () => {
       <div className="w-full flex justify-evenly flex-wrap mt-8">
         <div className="w-[394px] h-[140px] flex flex-col justify-between ">
           <p
-            className={`${montserrat.className} text-center lg:text-start font-normal text-sm text-myDarkOrange`}
+            className={`${montserrat.className} text-center lg:text-start font-normal text-sm text-myDarkOrange hover:text-blue-500`}
           >
             Problems trying
           </p>
           <h3
-            className={`${montserrat.className} text-center lg:text-start font-bold text-[24px] text-myDark`}
+            className={`${montserrat.className} text-center lg:text-start font-bold text-[24px] text-myDark hover:text-blue-500`}
           >
             Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
           </h3>
         </div>
         <div className="w-[529px] h-[40px]">
           <p
-            className={`${montserrat.className} text-justify lg:text-start font-normal text-[10px] lg:text-sm text-myGrey mt-16 lg:mt-0 px-8 lg:px-0 `}
+            className={`${montserrat.className} text-justify lg:text-start font-normal text-sm text-myGrey mt-16 lg:mt-0 px-8 lg:px-0 hover:text-blue-500`}
           >
             Problems trying to resolve the conflict between the two major realms
             of Classical physics: Newtonian mechanics
@@ -65,48 +65,48 @@ const ContentStatsVideo = () => {
       <div className="w-full space-y-12 lg:space-y-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-32">
         <div className="space-y-4">
           <h1
-            className={`${montserrat.className} text-center font-bold text-[58px] text-myDark`}
+            className={`${montserrat.className} text-center font-bold text-[58px] text-myDark hover:text-blue-500`}
           >
             15K
           </h1>
           <h5
-            className={`${montserrat.className} text-center font-bold text-[16px] text-myDark`}
+            className={`${montserrat.className} text-center font-bold text-[16px] text-myDark hover:text-blue-500`}
           >
             Happy Customers
           </h5>
         </div>
         <div className="space-y-4">
           <h1
-            className={`${montserrat.className} text-center font-bold text-[58px] text-myDark`}
+            className={`${montserrat.className} text-center font-bold text-[58px] text-myDark hover:text-blue-500`}
           >
             150K
           </h1>
           <h5
-            className={`${montserrat.className} text-center font-bold text-[16px] text-myDark`}
+            className={`${montserrat.className} text-center font-bold text-[16px] text-myDark hover:text-blue-500`}
           >
             Monthly Visitors
           </h5>
         </div>
         <div className="space-y-4">
           <h1
-            className={`${montserrat.className} text-center font-bold text-[58px] text-myDark`}
+            className={`${montserrat.className} text-center font-bold text-[58px] text-myDark hover:text-blue-500`}
           >
             15
           </h1>
           <h5
-            className={`${montserrat.className} text-center font-bold text-[16px] text-myDark`}
+            className={`${montserrat.className} text-center font-bold text-[16px] text-myDark hover:text-blue-500`}
           >
             Countries Worldwide
           </h5>
         </div>
         <div className="space-y-4">
           <h1
-            className={`${montserrat.className} text-center font-bold text-[58px] text-myDark`}
+            className={`${montserrat.className} text-center font-bold text-[58px] text-myDark hover:text-blue-500`}
           >
             100+
           </h1>
           <h5
-            className={`${montserrat.className} text-center font-bold text-[16px] text-myDark`}
+            className={`${montserrat.className} text-center font-bold text-[16px] text-myDark hover:text-blue-500`}
           >
             Top Partners
           </h5>
@@ -114,14 +114,15 @@ const ContentStatsVideo = () => {
       </div>
 
       {/* video */}
-      <div className="relative w-full flex justify-center items-center mt-6">
+
+      <div className="relative w-full flex justify-center items-center mt-6 px-5">
         {/* Video Element */}
         <video
           ref={videoRef}
           width={540}
           height={989}
           poster="/video/media bg-cover.png" // Path to the cover image
-          className="w-[277px] h-auto lg:w-[540px] lg:h-[989px] rounded-lg shadow-lg"
+          className="rounded-lg shadow-lg transform transition duration-500 hover:scale-110"
           controls // Video controls will show when the video plays
           onClick={togglePlayPause} // Toggle play/pause on video click
           onPlay={() => setShowPlayIcon(false)} // Hide icon when playing

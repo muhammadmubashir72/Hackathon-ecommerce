@@ -9,23 +9,23 @@ const WorkWithUs = () => {
       <div className="w-full lg:w-[70%] bg-mybackgroundblue flex flex-col justify-center p-6 lg:p-12">
         <div className="max-w-md mx-auto space-y-6 text-center lg:text-left">
           <h5
-            className={`${montserrat.className} font-bold text-sm sm:text-base lg:text-lg text-white`}
+            className={`${montserrat.className} font-bold text-sm sm:text-base lg:text-lg text-white hover:text-blue-500`}
           >
             WORK WITH US
           </h5>
           <h1
-            className={`${montserrat.className} font-bold text-2xl sm:text-3xl lg:text-4xl text-white`}
+            className={`${montserrat.className} font-bold text-2xl sm:text-3xl lg:text-4xl text-white hover:text-blue-500`}
           >
             Now Let’s grow Yours
           </h1>
           <p
-            className={`${montserrat.className} font-normal text-sm sm:text-base lg:text-lg text-white`}
+            className={`${montserrat.className} font-normal text-sm sm:text-base lg:text-lg text-white hover:text-blue-500`}
           >
             The gradual accumulation of information about atomic and small-scale
             behavior during the first quarter of the 20th.
           </p>
           <div>
-            <button className="w-[132px] h-[52px] text-white font-bold outline outline-white rounded-[5px] text-sm">
+            <button className="w-[132px] h-[52px] text-white font-bold outline outline-white rounded-[5px] text-sm hover:text-blue-500">
               Button
             </button>
           </div>
@@ -39,7 +39,7 @@ const WorkWithUs = () => {
           alt="work-img"
           width={510}
           height={500}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transform transition duration-500 hover:scale-110"
         />
       </div>
     </div>

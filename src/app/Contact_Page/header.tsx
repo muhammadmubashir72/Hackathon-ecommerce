@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
-import { FaAngleDown,FaArrowRight } from "react-icons/fa";
+import { FaAngleDown, FaArrowRight } from "react-icons/fa";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
@@ -22,10 +22,12 @@ export default function Header() {
   return (
     <div className="w-full">
       {/* Navbar Light */}
-      <div className="w-full px-4 sm:px-8 py-4 bg-white">
+      <div className="w-full px-4 md:px-2 sm:px-8 py-4 bg-white">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <h3 className={`${montserrat.className} font-bold text-2xl`}>
+          <h3
+            className={`${montserrat.className} font-bold text-2xl text-myDark hover:text-blue-500`}
+          >
             Bandage
           </h3>
 
@@ -51,21 +53,22 @@ export default function Header() {
           </div>
 
           {/* Navbar Links */}
-          <ul className="hidden md:flex items-center space-x-6">
+          <ul className="hidden md:flex items-center md:space-x-1 lg:space-x-6">
             {[
               { name: "Home", link: "/" },
-              { name: "Shop", link: "#", dropdown: true }, // Added dropdown flag
-              { name: "About", link: "#" },
-              { name: "Blog", link: "/#" },
+              { name: "Shop", link: "/Shop_Page", dropdown: true },
+              { name: "Product", link: "/Product_Page", dropdown: true },
+              { name: "About", link: "/About_Page" },
+              { name: "Team", link: "/Team_Page" },
               { name: "Contact", link: "/Contact_Page" },
-              { name: "Pages", link: "/pages" },
+              { name: "Price", link: "/Price_Page" },
             ].map((navbar) => (
               <li key={navbar.link} className="relative">
                 {/* Shop Dropdown Button */}
                 {navbar.name === "Shop" ? (
                   <button
                     onClick={toggleShopDropdown}
-                    className={`${montserrat.className} font-bold text-sm text-myDark flex items-center`}
+                    className={`${montserrat.className} font-bold text-sm text-myDark flex items-center hover:text-blue-500`}
                   >
                     {navbar.name}
                     <FaAngleDown
@@ -77,7 +80,7 @@ export default function Header() {
                 ) : (
                   <Link
                     href={navbar.link}
-                    className={`${montserrat.className} font-bold text-sm text-myGrey`}
+                    className={`${montserrat.className} font-bold text-sm text-myGrey hover:text-blue-500`}
                   >
                     {navbar.name}
                   </Link>
@@ -86,14 +89,18 @@ export default function Header() {
                 {/* Shop Dropdown Menu */}
                 {navbar.name === "Shop" && shopDropdownOpen && (
                   <ul className="absolute left-0 top-full bg-white shadow-lg mt-2 py-2 w-40 z-50">
-                    {["Men", "Women", "Kids"].map((category) => (
+                    {[
+                      { name: "Men", link: "/Shop_Page/kids" },
+                      { name: "Men", link: "/Shop_Page/men" },
+                      { name: "Men", link: "/Shop_Page/women" },
+                    ].map((category) => (
                       <li
-                        key={category}
+                        key={category.name}
                         className="px-4 py-2 hover:bg-gray-100"
                       >
-                        <Link href={`#${category.toLowerCase()}`}>
-                          <span className="text-sm font-medium text-myGrey">
-                            {category}
+                        <Link href={`#${category.link}`}>
+                          <span className="text-sm font-medium text-myGrey hover:text-blue-500">
+                            {category.name}
                           </span>
                         </Link>
                       </li>
@@ -105,23 +112,21 @@ export default function Header() {
           </ul>
 
           {/* Login and Icons */}
-          <div className="w-[300px] h-[52px] hidden md:flex items-center space-x-4">
-            <div className="w-[86px] items-center">
+          <div className=" hidden md:flex items-center space-x-5 lg:space-x-14">
+            <div className="items-center">
               <Link
                 href="#"
-                className={`${montserrat.className} font-bold text-sm text-myBlue`}
+                className={`${montserrat.className} font-bold text-sm text-myBlue hover:text-blue-500`}
               >
                 Login
               </Link>
             </div>
-            <div className="w-[214px] h-[52px] flex  bg-myBlue">
-            <button className="w-[214px] h-[52px]  bg-myBlue text-white font-bold  rounded-[5px] text-sm ">
-            Become a member 
+            <div className="w-[200px] h-[42px] lg:w-[214px] lg:h-[52px] flex rounded-md bg-myBlue">
+              <button className="w-[200px] h-[42px] lg:w-[214px] lg:h-[52px]  bg-myBlue hover:text-black text-white font-bold  rounded-[5px] text-sm ">
+                Become a member
               </button>
-              <FaArrowRight className="text-white mx-auto items-center text-start mt-4 mr-5"/>
+              <FaArrowRight className="text-white mx-auto items-center text-start mt-4 mr-5" />
             </div>
-            
-
           </div>
         </div>
 
@@ -130,13 +135,15 @@ export default function Header() {
           <div className="flex flex-col mt-4 md:hidden text-center space-y-2">
             {[
               { name: "Home", link: "/" },
-              { name: "Price", link: "#" },
-              { name: "Product", link: "#" },
+              { name: "Price", link: "/Price_Page" },
+              { name: "Team", link: "/Team_Page" },
+              { name: "About", link: "/About_Page" },
+              { name: "Product", link: "/Product_Page", dropdown: true },
               { name: "Contact", link: "/Contact_Page" },
             ].map((navbar) => (
               <Link href={navbar.link} key={navbar.name}>
                 <span
-                  className={`${montserrat.className} font-bold text-sm text-myGrey`}
+                  className={`${montserrat.className} font-bold text-sm text-myGrey hover:text-blue-500`}
                 >
                   {navbar.name}
                 </span>
@@ -144,24 +151,42 @@ export default function Header() {
             ))}
 
             {/* Mobile Shop Dropdown */}
-            <div className="relative">
-              <button
-                onClick={toggleShopDropdown}
-                className={`${montserrat.className} font-bold text-sm text-myGrey flex items-center justify-center`}
+            <div className="relative flex justify-center">
+              {/* Shop Button with Link */}
+              <Link
+                href="/ShopPage"
+                className={`${montserrat.className} font-bold text-sm text-myGrey flex items-center justify-center hover:text-blue-500`}
               >
                 Shop
+              </Link>
+              <button
+                onClick={toggleShopDropdown}
+                className="ml-1 focus:outline-none"
+                aria-label="Toggle Shop Dropdown"
+              >
                 <FaAngleDown
-                  className={`ml-1 transform ${
+                  className={`transform transition-transform duration-200 ${
                     shopDropdownOpen ? "rotate-180" : ""
                   }`}
                 />
               </button>
+
+              {/* Dropdown Menu */}
               {shopDropdownOpen && (
-                <ul className="flex flex-col mt-2 space-y-2">
-                  {["Men", "Women", "Kids"].map((category) => (
-                    <li key={category}>
-                      <Link href={`#${category.toLowerCase()}`}>
-                        <span className="text-sm font-medium">{category}</span>
+                <ul className="absolute mt-2 bg-white shadow-md py-2 w-40 z-50">
+                  {[
+                    { name: "Men", link: "/Shop_Page/men" },
+                    { name: "Women", link: "/Shop_Page/women" },
+                    { name: "Kids", link: "/Shop_Page/kids" },
+                  ].map((category) => (
+                    <li
+                      key={category.link}
+                      className="px-4 py-2 hover:bg-gray-100"
+                    >
+                      <Link href={category.link}>
+                        <span className="text-sm font-medium text-myGrey hover:text-blue-500">
+                          {category.name}
+                        </span>
                       </Link>
                     </li>
                   ))}

@@ -8,17 +8,17 @@ const FeaturePost = () => {
       {/* Header Section */}
       <div className="text-center">
         <h6
-          className={`${montserrat.className} font-bold text-sm sm:text-base md:text-lg text-myBlue`}
+          className={`${montserrat.className} font-bold text-sm sm:text-base md:text-lg text-myBlue hover:text-blue-500`}
         >
           Practice Advice
         </h6>
         <h3
-          className={`${montserrat.className} font-normal text-2xl sm:text-3xl md:text-4xl text-myDark mt-2`}
+          className={`${montserrat.className} font-normal text-2xl sm:text-3xl md:text-4xl text-myDark mt-2 `}
         >
           Featured Posts
         </h3>
         <p
-          className={`${montserrat.className} font-normal text-xs sm:text-sm md:text-base text-myGrey mt-4`}
+          className={`${montserrat.className} font-normal text-xs sm:text-sm md:text-base text-myGrey mt-4 hover:text-blue-500`}
         >
           Problems trying to resolve the conflict between the two major realms
           of Classical physics: Newtonian mechanics.

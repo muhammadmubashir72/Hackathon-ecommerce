@@ -11,6 +11,7 @@ export default {
       colors: {
         myDark:"#252B42",
         myGrey:"#737373",
+        myLightGrey:"#BDBDBD",
         myBlue:"#23A6F0",
         myGreen:"#2DC071",
         myDarkGreen:"#23856D",

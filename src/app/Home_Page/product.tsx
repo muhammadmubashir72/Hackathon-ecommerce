@@ -8,26 +8,26 @@ const ProductCard = () => {
       {/* h2 #feature-section.1 */}
 
       <h4
-        className={`${montserrat.className}items-center text-center font-normal text-[20px] text-myGrey`}
+        className={`${montserrat.className}items-center text-center font-normal text-[20px] text-myGrey hover:text-blue-500`}
       >
         Featured Products
       </h4>
 
       <h3
-        className={`${montserrat.className} font-normal text-[24px] text-center text-myDark`}
+        className={`${montserrat.className} font-normal text-[24px] text-center text-myDark hover:text-blue-500`}
       >
         Problems trying to resolve the conflict between
       </h3>
 
       <p
-        className={`${montserrat.className}items-center text-center font-normal text-[14px]  text-myGrey mb-16 mt-2`}
+        className={`${montserrat.className}items-center text-center font-normal text-[14px]  text-myGrey mb-16 mt-2 hover:text-blue-500`}
       >
         Problems trying to resolve the conflict between
       </p>
 
       {/*  Product*/}
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 mx-12 sm:mx-0 sm:px-[118px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-12">
         <ProductCards
           imagePath="/images/product-cover-1.png"
           heading="Graphic Design"
