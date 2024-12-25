@@ -77,7 +77,7 @@ export default function Header() {
           <div className=" hidden md:flex items-center space-x-5 md:space-x-2 lg:space-x-14">
             <div className="items-center">
               <Link
-                href="#"
+                href=""
                 className={`${montserrat.className} font-bold text-sm text-myBlue hover:text-blue-500`}
               >
                 Login

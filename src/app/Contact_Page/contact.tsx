@@ -50,7 +50,7 @@ export default function ContactSection() {
             "logo_instagram",
             "logo_linkedin",
           ].map((social) => (
-            <Link href="#" key={social}>
+            <Link href="" key={social}>
               <Image
                 src={`/images/${social}.png`}
                 alt={social}

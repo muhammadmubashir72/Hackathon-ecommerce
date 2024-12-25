@@ -131,7 +131,7 @@ export default function Header() {
               className="object-cover w-4 h-4 md:w-[18px] md:h-[18px] lg:w-[22px] lg:h-[22px]"
             />
             <Link
-              href="#"
+              href=""
               className={`${montserrat.className} font-bold text-[12px] lg:text-sm text-myBlue hover:text-blue-500`}
             >
               Login/Reg
@@ -139,9 +139,9 @@ export default function Header() {
 
             <div className="flex space-x-4 items-center">
               {[
-                { name: "search", Link: "#" },
+                { name: "search", Link: "" },
                 { name: "cart", Link: "/Product_Page" },
-                { name: "heart", Link: "#" },
+                { name: "heart", Link: "" },
               ].map((icon) => (
                 <Link
                   key={icon.Link}

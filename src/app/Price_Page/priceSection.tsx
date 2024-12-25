@@ -14,7 +14,7 @@ export default function PriceSection() {
           PRICING
         </h3>
         <h1
-          className={`${montserrat.className}text-center font-bold text-[38px] md:text-[48px] lg:text-[58px] text-myDark hover:text-blue-500`}
+          className={`${montserrat.className} text-center font-bold text-[38px] md:text-[48px] lg:text-[58px] text-myDark hover:text-blue-500`}
         >
           Simple Pricing
         </h1>

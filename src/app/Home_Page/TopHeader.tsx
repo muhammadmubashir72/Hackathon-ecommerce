@@ -38,7 +38,7 @@ const TopHeader = () => {
             </h6>
             <div className="flex gap-2">
               {["instagram", "youtube", "facebook", "twitter"].map((social) => (
-                <Link href="#" key={social}>
+                <Link href="" key={social}>
                   <Image
                     src={`/images/${social}.png`}
                     alt={social}

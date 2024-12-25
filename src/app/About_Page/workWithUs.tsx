@@ -32,6 +32,10 @@ const WorkWithUs = () => {
         </div>
       </div>
 
+
+
+
+
       {/* Image Section */}
       <div className="w-full lg:w-1/2 bg-myGrey/20 flex items-center justify-center h-full">
         <Image

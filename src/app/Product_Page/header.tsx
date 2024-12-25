@@ -130,7 +130,7 @@ export default function Header() {
               height={22}
             />
             <Link
-              href="#"
+              href=""
               className={`${montserrat.className} font-bold text-sm text-myBlue hover:text-blue-500`}
             >
               Login / Register
@@ -138,9 +138,9 @@ export default function Header() {
 
             <div className="flex space-x-4 items-center">
               {[
-                { name: "search", Link: "#" },
+                { name: "search", Link: "" },
                 { name: "cart", Link: "/Product_Page" },
-                { name: "heart", Link: "#" },
+                { name: "heart", Link: "" },
               ].map((icon) => (
                 <div key={icon.Link} className="relative flex items-center">
                   <Link href={icon.Link} className="hover:opacity-80">
@@ -238,7 +238,7 @@ export default function Header() {
                   height={22}
                 />
                 <Link
-                  href="#"
+                  href=""
                   className={`${montserrat.className} font-normal text-[30] text-myBlue hover:text-blue-500`}
                 >
                   Login / Register
@@ -248,9 +248,9 @@ export default function Header() {
               {/* Icons in a block-wise layout */}
               <div className="flex flex-col space-y-4 items-center my-4">
                 {[
-                  { name: "search", Link: "#" },
+                  { name: "search", Link: "" },
                   { name: "cart", Link: "/Product_Page" },
-                  { name: "heart", Link: "#" },
+                  { name: "heart", Link: "" },
                 ].map((icon) => (
                   <div key={icon.Link} className="relative flex items-center">
                     <Link href={icon.Link} className="hover:opacity-80">
@@ -275,7 +275,7 @@ export default function Header() {
               </div>
             </div>
           </div>
-        )}
+        )} 
       </div>
     </div>
   );
