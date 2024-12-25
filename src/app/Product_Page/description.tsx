@@ -1,7 +1,6 @@
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { FaAngleRight } from "react-icons/fa6";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 const Description = () => {

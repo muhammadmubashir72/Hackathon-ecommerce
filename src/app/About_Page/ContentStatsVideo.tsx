@@ -1,5 +1,5 @@
 "use client";
-import { FaPlay, FaPause } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
 import { Montserrat } from "next/font/google";
 import { useRef, useState } from "react";
 

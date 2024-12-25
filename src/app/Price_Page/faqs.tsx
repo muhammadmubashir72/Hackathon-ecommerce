@@ -1,9 +1,7 @@
 "use client";
 import { Montserrat } from "next/font/google";
-import Image from "next/image";
 import { useState } from "react";
 import { FaAngleRight } from "react-icons/fa";
-import { IoIosCheckmark } from "react-icons/io";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 

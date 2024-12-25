@@ -53,7 +53,8 @@ export default function Header() {
           </div>
 
           {/* Navbar Links */}
-          <ul className="hidden md:flex items-center md:space-x-1 lg:space-x-6">
+          {/* Navbar Links */}
+          <ul className="hidden md:flex items-center md:space-x-2 lg:space-x-6">
             {[
               { name: "Home", link: "/" },
               { name: "Shop", link: "/Shop_Page", dropdown: true },
@@ -64,19 +65,50 @@ export default function Header() {
               { name: "Price", link: "/Price_Page" },
             ].map((navbar) => (
               <li key={navbar.link} className="relative">
-                {/* Shop Dropdown Button */}
                 {navbar.name === "Shop" ? (
-                  <button
-                    onClick={toggleShopDropdown}
-                    className={`${montserrat.className} font-bold text-sm text-myDark flex items-center hover:text-blue-500`}
-                  >
-                    {navbar.name}
-                    <FaAngleDown
-                      className={`ml-1 transform ${
-                        shopDropdownOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
+                  <div className="flex items-center relative">
+                    {/* Shop Link */}
+                    <Link
+                      href="/Shop_Page" // Navigate to main Shop page
+                      className={`${montserrat.className} font-bold text-sm text-myDark hover:text-blue-500`}
+                    >
+                      Shop
+                    </Link>
+
+                    {/* Dropdown Toggle (Arrow Button) */}
+                    <button
+                      onClick={toggleShopDropdown}
+                      className="ml-1 focus:outline-none"
+                      aria-label="Toggle Shop Dropdown"
+                    >
+                      <FaAngleDown
+                        className={`transform transition-transform duration-200 ${
+                          shopDropdownOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {/* Dropdown Menu */}
+                    {shopDropdownOpen && (
+                      <ul className="absolute mt-2 bg-white shadow-md py-2 w-40 z-50">
+                        {[
+                          { name: "Men", link: "/Shop_Page/men" },
+                          { name: "Women", link: "/Shop_Page/women" },
+                          { name: "Kids", link: "/Shop_Page/kids" },
+                        ].map((category) => (
+                          <li
+                            key={category.link}
+                            className="px-4 py-2 hover:bg-gray-100"
+                          >
+                            <Link href={category.link}>
+                              <span className="text-sm font-medium text-myGrey hover:text-blue-500">
+                                {category.name}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 ) : (
                   <Link
                     href={navbar.link}
@@ -84,28 +116,6 @@ export default function Header() {
                   >
                     {navbar.name}
                   </Link>
-                )}
-
-                {/* Shop Dropdown Menu */}
-                {navbar.name === "Shop" && shopDropdownOpen && (
-                  <ul className="absolute left-0 top-full bg-white shadow-lg mt-2 py-2 w-40 z-50">
-                    {[
-                      { name: "Men", link: "/Shop_Page/kids" },
-                      { name: "Men", link: "/Shop_Page/men" },
-                      { name: "Men", link: "/Shop_Page/women" },
-                    ].map((category) => (
-                      <li
-                        key={category.name}
-                        className="px-4 py-2 hover:bg-gray-100"
-                      >
-                        <Link href={`#${category.link}`}>
-                          <span className="text-sm font-medium text-myGrey hover:text-blue-500">
-                            {category.name}
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
                 )}
               </li>
             ))}

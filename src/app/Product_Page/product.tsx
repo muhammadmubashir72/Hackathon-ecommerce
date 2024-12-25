@@ -1,5 +1,4 @@
 import { Montserrat } from "next/font/google";
-import ProductCards from "../Home_Page/ProductCardComponent";
 import ProductCardShow from "./ProductCardCom";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 

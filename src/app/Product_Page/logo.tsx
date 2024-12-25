@@ -1,8 +1,5 @@
-import { Montserrat } from "next/font/google";
 import Image from "next/image";
-import { IoIosCheckmark } from "react-icons/io";
 
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 const Logo = () => {
   return (
