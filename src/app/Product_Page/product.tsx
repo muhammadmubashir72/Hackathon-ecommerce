@@ -1,82 +1,62 @@
+"use client"
 import { Montserrat } from "next/font/google";
-import ProductCardShow from "./ProductCardCom";
+import React, { useEffect, useState } from "react";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import ProductCards from "./ProductCardCom";
+
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
-const ProductShows = () => {
+async function getData() {
+  try {
+    const FetchData = await client.fetch(`*[_type == "seller"]{
+      id,
+      heading,
+      subheading,
+      image,
+      price{
+        originalPrice,
+        discountedPrice
+      },
+    }`);
+    return FetchData;
+  } catch (error) {
+    console.error("Error fetching data", error);
+    return [];
+  }
+}
+
+const Product2 = () => {
+  const [products, setProducts] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const data = await getData();
+      setProducts(data);
+    };
+    fetchProducts();
+  }, []);
+
   return (
-    <div>
-      <h3
-        className={`${montserrat.className} pl-0 md:lg:pl-[40px] pb-10 pt-9 text-center md:lg:text-start font-bold text-[20px] md:lg:text-[24px] text-myDark hover:text-blue-500`}
-      >
-        BESTSELLER PRODUCTS
-      </h3>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-        <ProductCardShow
-          imagePath="/product/product-cover-1.png"
-          heading="Graphic Design"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-        <ProductCardShow
-          imagePath="/product/single-product-4-cover-2.png"
-          heading="Web Design"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-
-        <ProductCardShow
-          imagePath="/product/product-cover-3.png"
-          heading="Web Development"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-
-        <ProductCardShow
-          imagePath="/product/product-cover-4.png"
-          heading="App Development"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-
-        <ProductCardShow
-          imagePath="/product/product-cover-5.png"
-          heading="Digital Marketing"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-
-        <ProductCardShow
-          imagePath="/product/product-cover-6.png"
-          heading="E Commerce"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-
-        <ProductCardShow
-          imagePath="/product/product-cover-7.png"
-          heading="Cloud Computing"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-
-        <ProductCardShow
-          imagePath="/product/product-cover-8.png"
-          heading="AI Agentic"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
+    <div className="items-center my-14">
+      
+      {/* Product Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-12">
+        {products.map((product, index) => (
+          <ProductCards
+            key={index}
+            detailsLink={`/products/${product.id}`}
+            image={urlFor(product.image).url()} // Pass the image
+            alt={product.heading}
+            heading={product.heading} // Pass the heading
+            department={product.subheading} // Pass the department
+            originalPrice={`$${product.price.originalPrice}`} // Pass the original price
+            discountedPrice={`$${product.price.discountedPrice}`} // Pass the discounted price
+          />
+        ))}
       </div>
     </div>
   );
 };
 
-export default ProductShows;
+export default Product2;

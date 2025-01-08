@@ -1,9 +1,10 @@
 import Image from "next/image";
+import React from "react";
 
 const Logo = () => {
   return (
     //  {/* grid-cols-6 */}
-    <div className="hidden sm:grid mx-auto w-full lg:w-[1100] grid-cols-1 sm:grid-cols-1 md:grid-cols-6 lg:grid-cols-6 gap-4 items-start mt-16 px-8">
+    <div className="hidden sm:grid mx-auto w-full lg:w-[1000] grid-cols-1 sm:grid-cols-1 md:grid-cols-6 lg:grid-cols-6 gap-4 items-start mt-16 px-8">
       {/* Image 1 */}
       <Image
         src="/company/img-1.png"

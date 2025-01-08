@@ -2,6 +2,7 @@ import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
+import React from "react";
 
 const Description = () => {
   return (

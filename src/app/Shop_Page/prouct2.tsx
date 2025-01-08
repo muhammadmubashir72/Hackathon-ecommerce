@@ -1,102 +1,60 @@
+"use client"
+import { Montserrat } from "next/font/google";
 import ProductCards from "./ProductCardComponent";
+import React, { useEffect, useState } from "react";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
+
+async function getData() {
+  try {
+    const FetchData = await client.fetch(`*[_type == "shop"]{
+      id,
+      heading,
+      subheading,
+      image,
+      price{
+        originalPrice,
+        discountedPrice
+      },
+    }`);
+    return FetchData;
+  } catch (error) {
+    console.error("Error fetching data", error);
+    return [];
+  }
+}
 
 const Product2 = () => {
+  const [products, setProducts] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const data = await getData();
+      setProducts(data);
+    };
+    fetchProducts();
+  }, []);
+
   return (
-    //  {/*  Product*/}
-
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center mt-16 md:px-10 lg:px-0">
-      <ProductCards
-        imagePath="/shop images/shop-img-1.png"
-        heading="Graphic Design"
-        department="English Department"
-        price1="$16.48"
-        price2="$6.48"
-      />
-
-      <ProductCards
-        imagePath="/shop images/shop-img-2.png"
-        heading="Graphic Design"
-        department="English Department"
-        price1="$16.48"
-        price2="$6.48"
-      />
-
-      <ProductCards
-        imagePath="/shop images/shop-img-3.png"
-        heading="Graphic Design"
-        department="English Department"
-        price1="$16.48"
-        price2="$6.48"
-      />
-
-      <ProductCards
-        imagePath="/shop images/shop-img-4.png"
-        heading="Graphic Design"
-        department="English Department"
-        price1="$16.48"
-        price2="$6.48"
-      />
-
-      <ProductCards
-        imagePath="/shop images/shop-img-5.png"
-        heading="Graphic Design"
-        department="English Department"
-        price1="$16.48"
-        price2="$6.48"
-      />
-
-      <ProductCards
-        imagePath="/shop images/shop-img-6.png"
-        heading="Graphic Design"
-        department="English Department"
-        price1="$16.48"
-        price2="$6.48"
-      />
-
-      <ProductCards
-        imagePath="/shop images/shop-img-7.png"
-        heading="Graphic Design"
-        department="English Department"
-        price1="$16.48"
-        price2="$6.48"
-      />
-
-      <ProductCards
-        imagePath="/shop images/shop-img-8.png"
-        heading="Graphic Design"
-        department="English Department"
-        price1="$16.48"
-        price2="$6.48"
-      />
-
-      <ProductCards
-        imagePath="/shop images/shop-img-9.png"
-        heading="Graphic Design"
-        department="English Department"
-        price1="$16.48"
-        price2="$6.48"
-      />
-      <ProductCards
-        imagePath="/shop images/shop-img-10.png"
-        heading="Graphic Design"
-        department="English Department"
-        price1="$16.48"
-        price2="$6.48"
-      />
-      <ProductCards
-        imagePath="/shop images/shop-img-11.png"
-        heading="Graphic Design"
-        department="English Department"
-        price1="$16.48"
-        price2="$6.48"
-      />
-      <ProductCards
-        imagePath="/shop images/shop-img-12.png"
-        heading="Graphic Design"
-        department="English Department"
-        price1="$16.48"
-        price2="$6.48"
-      />
+    <div className="items-center my-14">
+      
+      {/* Product Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-12">
+        {products.map((product, index) => (
+          <ProductCards
+            key={index}
+            detailsLink={`/products/${product.id}`}
+            image={urlFor(product.image).url()} // Pass the image
+            alt={product.heading}
+            heading={product.heading} // Pass the heading
+            department={product.subheading} // Pass the department
+            originalPrice={`$${product.price.originalPrice}`} // Pass the original price
+            discountedPrice={`$${product.price.discountedPrice}`} // Pass the discounted price
+          />
+        ))}
+      </div>
     </div>
   );
 };

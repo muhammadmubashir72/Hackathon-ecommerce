@@ -145,12 +145,13 @@ export default function Header() {
           <div className="flex flex-col mt-4 md:hidden text-center space-y-2 ">
             {[
               { name: "Home", link: "/" },
-              { name: "Price", link: "/Price_Page" },
-              { name: "Team", link: "/Team_Page" },
-              { name: "About", link: "/About_Page" },
+              { name: "Shop", link: "/Shop_Page", dropdown: true },
               { name: "Product", link: "/Product_Page", dropdown: true },
+              { name: "About", link: "/About_Page" },
+              { name: "Team", link: "/Team_Page" },
               { name: "Contact", link: "/Contact_Page" },
-            ].map((navbar) => (
+              { name: "Price", link: "/Price_Page" },
+           ].map((navbar) => (
               <Link href={navbar.link} key={navbar.name}>
                 <span
                   className={`${montserrat.className} font-bold text-sm text-myGrey hover:text-blue-500`}
@@ -166,7 +167,7 @@ export default function Header() {
             <div className="relative flex justify-center">
               {/* Shop Button with Link */}
               <Link
-                href="/Shop_Page"
+                href="/shop-page"
                 className={`${montserrat.className} font-bold text-sm text-myGrey flex items-center justify-center hover:text-blue-500`}
               >
                 Shop
@@ -187,9 +188,9 @@ export default function Header() {
               {shopDropdownOpen && (
                 <ul className="absolute mt-2 bg-white shadow-md py-2 w-40 z-50">
                   {[
-                    { name: "Men", link: "/Shop_Page/men" },
-                    { name: "Women", link: "/Shop_Page/women" },
-                    { name: "Kids", link: "/Shop_Page/kids" },
+                    { name: "Men", link: "/shop-page/men" },
+                    { name: "Women", link: "/shop-page/women" },
+                    { name: "Kids", link: "/shop-page/kids" },
                   ].map((category) => (
                     <li
                       key={category.link}

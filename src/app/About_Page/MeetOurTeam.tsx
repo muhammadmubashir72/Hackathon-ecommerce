@@ -28,13 +28,13 @@ const MeetOurTeam = () => {
 
       {/* user */}
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 items-center space-y-11 md:space-y-0 lg:space-y-0 mx-auto mt-24 px-5 lg:px-24   md:space-x-3">
-        <div className="items-center mx-auto space-y-3">
+        <div className="items-center mx-auto space-y-3 transform transition duration-500 hover:scale-110">
           <Image
             src="/user/user-1.jpg"
             alt="user-1"
             width={316}
             height={231}
-            className="lg:w-[316px] lg:h-[231px] object-cover transform transition duration-500 hover:scale-110"
+            className="lg:w-[316px] lg:h-[231px] object-cover "
           />
           <h5
             className={`${montserrat.className} text-center font-bold text-sm sm:text-base md:text-lg lg:text-[16px] text-myDark hover:text-blue-500`}
@@ -49,7 +49,7 @@ const MeetOurTeam = () => {
           </h6>
 
           {/* social icons */}
-          <div className="px-0 flex space-x-5 justify-center">
+          <div className="px-0 flex space-x-5 justify-center ">
             {/* Facebook Icon */}
             <div>
               {/* Small Device Image */}
@@ -107,13 +107,13 @@ const MeetOurTeam = () => {
             </div>
           </div>
         </div>
-        <div className="items-center mx-auto space-y-3">
+        <div className="items-center mx-auto space-y-3 transform transition duration-500 hover:scale-110">
           <Image
             src="/user/user-2.jpg"
             alt="user-2"
             width={316}
             height={231}
-            className="lg:w-[316px] lg:h-[231px] object-cover transform transition duration-500 hover:scale-110"
+            className="lg:w-[316px] lg:h-[231px] object-cover  "
           />
           <h5
             className={`${montserrat.className} text-center font-bold text-sm sm:text-base md:text-lg lg:text-[16px] text-myDark hover:text-blue-500`}
@@ -187,13 +187,13 @@ const MeetOurTeam = () => {
           </div>
         </div>
 
-        <div className="items-center mx-auto space-y-3">
+        <div className="items-center mx-auto space-y-3 transform transition duration-500 hover:scale-110">
           <Image
             src="/user/user-3.jpg"
             alt="user-3"
             width={316}
             height={231}
-            className="lg:w-[316px] lg:h-[231px] object-cover transform transition duration-500 hover:scale-110"
+            className="lg:w-[316px] lg:h-[231px] object-cover "
           />
           <h5
             className={`${montserrat.className} text-center font-bold text-sm sm:text-base md:text-lg lg:text-[16px] text-myDark hover:text-blue-500`}

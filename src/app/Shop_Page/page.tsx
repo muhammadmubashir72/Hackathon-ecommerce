@@ -7,6 +7,7 @@ import Logo from "./logo";
 import Product2 from "./prouct2";
 import Next from "./next";
 import Logo2 from "./logo2";
+import React from "react";
 
 
 export default function ShopPager() {
@@ -14,12 +15,12 @@ export default function ShopPager() {
   return (
     <div>
       <TopHeader />
-      <Header />
+       <Header />
       <Shop />
       <Product />
       <Show />
       <Logo />
-      <Product2 />
+     <Product2 />
       <Next />
       <Logo2 />
     </div>

@@ -1,5 +1,6 @@
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
+import React from "react";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 const Carousel_2 = () => {

@@ -67,7 +67,7 @@ export default function ContactSection() {
       <div className="relative w-full mt-12 lg:mt-0">
         {/* Background Circles */}
         <div className="absolute inset-0">
-          <div className="bg-myImageBackground absolute w-[300px] h-[300px] lg:w-[460px] lg:h-[460px] rounded-full right-[65px] bottom-[124px] lg:bottom-[137px] lg:right-[148px] md:w-[360px] md:h-[360px] md:right-[30px] md:bottom-[18px]" />
+          <div className="bg-myImageBackground absolute w-[300px] h-[300px] lg:w-[460px] lg:h-[460px] rounded-full right-[65px] bottom-[124px] lg:bottom-[137px] lg:right-[28px] md:w-[360px] md:h-[360px] md:right-[30px] md:bottom-[18px]" />
           <div className="bg-myImageBackground absolute w-10 h-10 lg:w-[60px] lg:h-[60px] rounded-full top-10 lg:top-[44px] lg:bottom-[0px] left-[11px] lg:left-[-90px] md:w-[50px] md:h-[50px] md:left-[-10px] md:top-2" />
           <div className="bg-myImageBackground absolute w-8 h-8 lg:w-[30px] lg:h-[30px] rounded-full bottom-[215px] lg:bottom-[350px] right-[18px] lg:right-[60px] md:bottom-[260px] md:right-[0px] " />
           <div

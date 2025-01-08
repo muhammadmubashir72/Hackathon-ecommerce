@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
 import { FaAngleDown } from "react-icons/fa";
+import React from "react";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
@@ -20,7 +21,7 @@ export default function Header() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       {/* Navbar Light */}
       <div className="w-full px-4 sm:px-8 py-4 bg-white">
         <div className="flex items-center justify-between">
@@ -57,7 +58,6 @@ export default function Header() {
             {[
               { name: "Home", link: "/" },
               { name: "Shop", link: "/Shop_Page", dropdown: true },
-              { name: "Product", link: "/Product_Page", dropdown: true },
               { name: "About", link: "/About_Page" },
               { name: "Team", link: "/Team_Page" },
               { name: "Contact", link: "/Contact_Page" },
@@ -91,9 +91,9 @@ export default function Header() {
                     {shopDropdownOpen && (
                       <ul className="absolute left-0 top-full bg-white shadow-lg mt-2 py-2 w-40 z-50">
                         {[
-                          { name: "Men", link: "/Shop_Page/kids" },
+                          { name: "Kids", link: "/Shop_Page/kids" },
                           { name: "Men", link: "/Shop_Page/men" },
-                          { name: "Men", link: "/Shop_Page/women" },
+                          { name: "Women", link: "/Shop_Page/women" },
                         ].map((category) => (
                           <li
                             key={category.name}

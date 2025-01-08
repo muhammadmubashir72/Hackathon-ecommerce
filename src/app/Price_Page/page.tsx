@@ -4,6 +4,7 @@ import FreeTrials from "./freeTrials";
 import Logo from "./logo";
 import Header from "./header";
 import PriceSection from "./priceSection";
+import React from "react";
 
 const PricePage = () => {
   return (

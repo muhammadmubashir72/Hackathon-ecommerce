@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FaAngleDown } from "react-icons/fa";
+import React from "react";
 
 const Show = () => {
   return (

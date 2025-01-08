@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa";
+import React from "react";
 
 const Shop = () => {
   return (

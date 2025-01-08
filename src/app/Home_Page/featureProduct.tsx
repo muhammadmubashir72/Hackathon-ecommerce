@@ -1,5 +1,6 @@
 import { Montserrat } from "next/font/google";
 import FeatureCard from "./FeatureCardComponent";
+import React from "react";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 const FeaturePost = () => {

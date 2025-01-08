@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
 import { FaAngleDown } from "react-icons/fa";
+import React from "react";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
@@ -62,7 +63,7 @@ export default function Header() {
               { name: "Team", link: "/Team_Page" },
               { name: "Contact", link: "/Contact_Page" },
               { name: "Price", link: "/Price_Page" },
-            ].map((navbar) => (
+           ].map((navbar) => (
               <li key={navbar.link} className="relative">
                 {navbar.name === "Shop" ? (
                   <div className="flex items-center relative">

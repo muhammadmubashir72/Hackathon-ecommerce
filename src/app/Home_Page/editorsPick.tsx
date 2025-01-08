@@ -1,5 +1,6 @@
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
+import React from "react";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 const Card = () => {
@@ -17,7 +18,7 @@ const Card = () => {
         Problems trying to resolve the conflict between
       </p>
       {/* row */}
-      <div className="flex flex-wrap gap-4 items-center justify-center mt-8">
+      <div className="flex flex-wrap gap-2 items-center justify-center mt-8">
         {/* Image 1 */}
         <div className="relative">
           <Image
@@ -93,6 +94,25 @@ const Card = () => {
           </div>
         </div>
       </div>
+
+      {/* h2 #feature-section.1 */}
+      <h4
+        className={`${montserrat.className}items-center text-center font-normal text-[20px] text-myGrey hover:text-blue-500`}
+      >
+        Featured Products
+      </h4>
+
+      <h3
+        className={`${montserrat.className} font-normal text-[24px] text-center text-myDark hover:text-blue-500`}
+      >
+        Problems trying to resolve the conflict between
+      </h3>
+
+      <p
+        className={`${montserrat.className}items-center text-center font-normal text-[14px]  text-myGrey mb-16 mt-2 hover:text-blue-500`}
+      >
+        Problems trying to resolve the conflict between
+      </p>
     </div>
   );
 };

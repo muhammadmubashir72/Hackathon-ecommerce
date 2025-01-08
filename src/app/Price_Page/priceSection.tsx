@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
+import React from "react";
 
 export default function PriceSection() {
   return (

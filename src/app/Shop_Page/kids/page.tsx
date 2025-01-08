@@ -1,8 +1,33 @@
 import ProductCardShow from "@/app/Product_Page/ProductCardCom";
+import { client } from "@/sanity/lib/client";
 import { Montserrat } from "next/font/google";
+import ProductCards from "../ProductCardComponent";
+import { urlFor } from "@/sanity/lib/image";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
+import React from "react";
 
-const Kids = () => {
+async function getData() {
+  try {
+    const FetchData = await client.fetch(`*[_type == "shop"]{
+  id,
+  heading,
+  subheading,
+  image,
+ price{
+    originalPrice,
+    discountedPrice
+  },
+}
+`);
+    return FetchData;
+  } catch (error) {
+    console.error("Error fetching data", error);
+  }
+}
+const Kids = async () => {
+  
+  const ShopProduct = await getData();
+  console.log(ShopProduct);
   return (
     <div>
       <h3
@@ -12,68 +37,19 @@ const Kids = () => {
       </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-        <ProductCardShow
-          imagePath="/product/product-cover-1.png"
-          heading="Graphic Design"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-        <ProductCardShow
-          imagePath="/product/single-product-4-cover-2.png"
-          heading="Web Design"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-
-        <ProductCardShow
-          imagePath="/product/product-cover-3.png"
-          heading="Web Development"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-
-        <ProductCardShow
-          imagePath="/product/product-cover-4.png"
-          heading="App Development"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-
-        <ProductCardShow
-          imagePath="/product/product-cover-5.png"
-          heading="Digital Marketing"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-
-        <ProductCardShow
-          imagePath="/product/product-cover-6.png"
-          heading="E Commerce"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-
-        <ProductCardShow
-          imagePath="/product/product-cover-7.png"
-          heading="Cloud Computing"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
-
-        <ProductCardShow
-          imagePath="/product/product-cover-8.png"
-          heading="AI Agentic"
-          department="English Department"
-          price1="$16.48"
-          price2="$6.48"
-        />
+          
+      {ShopProduct.map((shop:any,index:number)=>(
+             <ProductCards
+             key={index}
+             imagePath={urlFor(shop.image).url()} // Pass the image
+             heading={shop.heading} // Pass the heading
+             alt={shop.heading} // Use heading as alt text
+             department={shop.subheading} // Pass the department
+             price1={`$${shop.price.originalPrice}`} // Pass the original price
+             price2={`$${shop.price.discountedPrice}`} // Pass the discounted price
+           />
+           ))}
+            
       </div>
     </div>
   );
