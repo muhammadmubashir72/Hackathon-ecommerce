@@ -1,10 +1,9 @@
-import Header from "./header";
-import Logo from "./logo";
-import TopHeader from "./TopHeader";
-import ProductShows from "./product";
-import Description from "./description";
-import React from "react";
-import ProductCardSlide from "./productCardSlider";
+import Description from "../components/ProductComponent/description";
+import Header from "../components/ProductComponent/header";
+import Logo from "../components/ProductComponent/logo";
+import Product2 from "../components/ProductComponent/product";
+import ProductCardSlide from "../components/ProductComponent/productCardSlider";
+import TopHeader from "../components/ProductComponent/TopHeader";
 
 export default function ProductPage() {
   return (
@@ -13,7 +12,7 @@ export default function ProductPage() {
       <Header />
       <ProductCardSlide />
       <Description />
-      <ProductShows />
+      <Product2 />
       <Logo />
     </div>
   );

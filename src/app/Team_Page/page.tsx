@@ -1,9 +1,8 @@
-
-import Header from "./header";
-import FreeTrials from "./freeTrials";
-import MeetOurTeam from "./MeetOurTeam";
-import Tailored from "./tailored";
 import React from "react";
+import Header from "../components/TeamComponent/header";
+import Tailored from "../components/TeamComponent/tailored";
+import MeetOurTeam from "../components/TeamComponent/MeetOurTeam";
+import FreeTrials from "../components/TeamComponent/freeTrials";
 
 
 export default function Team() {

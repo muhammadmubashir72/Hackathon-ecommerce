@@ -1,6 +1,6 @@
-import Header from "./header";
-import ContactSection from "./contact";
-import VisitSection from "./visit";
+import ContactSection from "../components/ContactComponent/contact";
+import Header from "../components/ContactComponent/header";
+import VisitSection from "../components/ContactComponent/visit";
 
 const Contact = () => {
   return (

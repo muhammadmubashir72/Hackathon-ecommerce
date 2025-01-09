@@ -1,13 +1,14 @@
-import Header from "./header";
-import TopHeader from "./TopHeader";
-import Product from "./prouct";
-import Shop from "./shop";
-import Show from "./show";
-import Logo from "./logo";
-import Product2 from "./prouct2";
-import Next from "./next";
-import Logo2 from "./logo2";
+
 import React from "react";
+import TopHeader from "../components/ShopComponent/TopHeader";
+import Header from "../components/ShopComponent/header";
+import Shop from "../components/ShopComponent/shop";
+import Product from "../components/ShopComponent/prouct";
+import Show from "../components/ShopComponent/show";
+import Logo from "../components/ShopComponent/logo";
+import Product2 from "../components/ProductComponent/product";
+import Logo2 from "../components/ShopComponent/logo2";
+import Pagination from "../components/ShopComponent/next";
 
 
 export default function ShopPager() {
@@ -21,7 +22,7 @@ export default function ShopPager() {
       <Show />
       <Logo />
      <Product2 />
-      <Next />
+      <Pagination />
       <Logo2 />
     </div>
   );

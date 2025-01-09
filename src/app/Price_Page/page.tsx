@@ -1,10 +1,11 @@
-import Card from "./card";
-import Faqs from "./faqs";
-import FreeTrials from "./freeTrials";
-import Logo from "./logo";
-import Header from "./header";
-import PriceSection from "./priceSection";
+
 import React from "react";
+import Header from "../components/PriceComponent/header";
+import PriceSection from "../components/PriceComponent/priceSection";
+import Card from "../components/PriceComponent/card";
+import Logo from "../components/PriceComponent/logo";
+import Faqs from "../components/PriceComponent/faqs";
+import FreeTrials from "../components/PriceComponent/freeTrials";
 
 const PricePage = () => {
   return (

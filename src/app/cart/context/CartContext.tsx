@@ -29,20 +29,23 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   // addToCart function: Agar item pehle se cart mein hai, to uski quantity ko increment kar dega, agar nahi hai to naya item add karega
   const addToCart = (item: CartItem) => {
-    console.log('Adding to cart:', item); // Debugging
+    console.log("Adding item:", item);
     setCart((prevCart) => {
       const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
       if (existingItem) {
+        console.log("Item already in cart, updating quantity");
         return prevCart.map((cartItem) =>
           cartItem.id === item.id
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
             : cartItem
         );
       }
+      console.log("New item added to cart");
       return [...prevCart, { ...item, quantity: 1 }];
     });
-    alert('Added to cart Successfully!');
+    alert("Added to cart Successfully!");
   };
+  
   
   // updateQuantity function: Yeh function item ki quantity ko update karta hai
   const updateQuantity = (id: string, quantity: number) => {

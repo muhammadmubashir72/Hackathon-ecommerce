@@ -1,10 +1,10 @@
-import FeaturePost from "./Home_Page/featureProduct";
-import Header from "./Home_Page/header";
-import Carousel_3 from "./Home_Page/neuralUniverse";
-import Carousel from "./Home_Page/newCollection";
-import ProductCard from "./Home_Page/product";
-import TopHeader from "./Home_Page/TopHeader";
-import Carousel_2 from "./Home_Page/vitaClassicProduct";
+import FeaturePost from "./components/HomeComponent/featureProduct";
+import Header from "./components/HomeComponent/header";
+import Carousel_3 from "./components/HomeComponent/neuralUniverse";
+import Carousel from "./components/HomeComponent/newCollection";
+import ProductCard from "./components/HomeComponent/product";
+import TopHeader from "./components/HomeComponent/TopHeader";
+import Carousel_2 from "./components/HomeComponent/vitaClassicProduct";
 
 
 export default async function Home() {
