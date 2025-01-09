@@ -7,6 +7,7 @@ import { useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FaEye, FaStar } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
+import { useCart } from "@/app/cart/context/CartContext";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
@@ -26,6 +27,8 @@ interface IProducts {
 }
 
 const ProductDetails = async ({ params }: { params: Promise<Iparams> }) => {
+  const { addToCart } = useCart(); // Use the Cart Context
+
   const [selectedColor, setSelectedColor] = useState<string>("");
 
   // Array of colors to use
@@ -61,7 +64,7 @@ const ProductDetails = async ({ params }: { params: Promise<Iparams> }) => {
     return (
       <div>
         <h1
-          className={`${montserrat.className} font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight hover:text-blue-500`}
+          className={`${montserrat.className} font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black dark:text-white leading-tight hover:text-blue-500`}
         >
           Product not found
         </h1>
@@ -148,7 +151,16 @@ const ProductDetails = async ({ params }: { params: Promise<Iparams> }) => {
               <CiHeart className="text-gray-600" />
             </button>
             <button
-              onClick={() => {}}
+              onClick={() =>
+                addToCart({
+                  id: result.id,
+                  heading: result.heading,
+                  price: parseFloat(result.price.discountedPrice), // Ensure price is a number
+                  image: result.image,
+                  quantity: 1, // Default quantity
+                })
+              }
+              // onClick={handleAddToCart}
               className="w-12 h-12 border rounded-full flex items-center justify-center hover:bg-gray-200"
             >
               <IoCartOutline className="text-gray-600" />

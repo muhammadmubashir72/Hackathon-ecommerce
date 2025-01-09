@@ -5,26 +5,23 @@ import { useRef, useState } from "react";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 const ContentStatsVideo = () => {
-  const videoRef = useRef<HTMLVideoElement>(null); // Video reference
-  const [showPlayIcon, setShowPlayIcon] = useState(true); // Play icon visibility
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [showPlayIcon, setShowPlayIcon] = useState(true);
 
-  // Play the video and hide the play icon
   const handlePlayVideo = () => {
     if (videoRef.current) {
       videoRef.current.play();
-      setShowPlayIcon(false); // Hide the play icon when video starts
+      setShowPlayIcon(false);
     }
   };
 
-  // Pause the video and show the play icon
   const handlePauseVideo = () => {
     if (videoRef.current) {
       videoRef.current.pause();
-      setShowPlayIcon(true); // Show the play icon when video is paused
+      setShowPlayIcon(true);
     }
   };
 
-  // Toggle Play/Pause
   const togglePlayPause = () => {
     if (videoRef.current) {
       if (videoRef.current.paused) {
@@ -116,17 +113,16 @@ const ContentStatsVideo = () => {
       {/* video */}
 
       <div className="relative w-full flex justify-center items-center mt-6 px-5">
-        {/* Video Element */}
         <video
           ref={videoRef}
           width={540}
           height={989}
-          poster="/video/media bg-cover.png" // Path to the cover image
+          poster="/video/media bg-cover.png"
           className="rounded-lg shadow-lg transform transition duration-500 hover:scale-110"
-          controls // Video controls will show when the video plays
-          onClick={togglePlayPause} // Toggle play/pause on video click
-          onPlay={() => setShowPlayIcon(false)} // Hide icon when playing
-          onPause={() => setShowPlayIcon(true)} // Show icon when paused
+          controls
+          onClick={togglePlayPause}
+          onPlay={() => setShowPlayIcon(false)}
+          onPause={() => setShowPlayIcon(true)}
         >
           <source src="/video/nature.mp4" type="video/mp4" />
           Your browser does not support the video tag.

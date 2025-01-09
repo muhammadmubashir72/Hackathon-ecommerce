@@ -19,9 +19,8 @@ export default function Header() {
   const toggleShopDropdown = () => {
     setShopDropdownOpen(!shopDropdownOpen);
   };
-
   return (
-    <div className="w-full ">
+    <div className="w-full">
       {/* Navbar Light */}
       <div className="w-full px-4 sm:px-8 py-4 bg-white">
         <div className="flex items-center justify-between">
@@ -58,12 +57,13 @@ export default function Header() {
             {[
               { name: "Home", link: "/" },
               { name: "Shop", link: "/Shop_Page", dropdown: true },
+              { name: "Product", link: "/Product_Page" },
               { name: "About", link: "/About_Page" },
               { name: "Team", link: "/Team_Page" },
               { name: "Contact", link: "/Contact_Page" },
               { name: "Price", link: "/Price_Page" },
             ].map((navbar) => (
-              <li key={navbar.link} className="relative">
+              <li key={navbar.name} className="relative">
                 {navbar.name === "Shop" ? (
                   <div className="flex items-center relative">
                     {/* Shop Link */}
@@ -131,7 +131,7 @@ export default function Header() {
               className="object-cover w-4 h-4 md:w-[18px] md:h-[18px] lg:w-[22px] lg:h-[22px]"
             />
             <Link
-              href=""
+              href="#"
               className={`${montserrat.className} font-bold text-[12px] lg:text-sm text-myBlue hover:text-blue-500`}
             >
               Login/Reg
@@ -139,13 +139,13 @@ export default function Header() {
 
             <div className="flex space-x-4 items-center">
               {[
-                { name: "search", Link: "" },
-                { name: "cart", Link: "/Product_Page" },
-                { name: "heart", Link: "" },
+                { name: "search", link: "/search" }, // Update link
+                { name: "cart", link: "/cart" }, // Update link
+                { name: "heart", link: "/wishlist" }, // Update link
               ].map((icon) => (
                 <Link
-                  key={icon.Link}
-                  href={icon.Link}
+                  key={icon.name} // Use `icon.name` as key
+                  href={icon.link} // Use `icon.link` here
                   className="hover:opacity-80"
                 >
                   <Image
@@ -211,7 +211,7 @@ export default function Header() {
                     { name: "Kids", link: "/Shop_Page/kids" },
                   ].map((category) => (
                     <li
-                      key={category.link}
+                      key={category.name}
                       className="px-4 py-2 hover:bg-gray-100 hover:text-blue-500"
                     >
                       <Link href={category.link}>

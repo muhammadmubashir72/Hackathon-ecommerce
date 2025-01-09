@@ -8,14 +8,14 @@ const Description = () => {
   return (
     <div className="mt-16">
       <div className="flex items-center flex-wrap justify-center space-x-2  md:space-x-20 lg:space-x-20  mb-8">
-        <Link href="/">
+        <Link href="">
           <h6
             className={`${montserrat.className} text-start font-semibold text-[12px] md:lg:text-[14px] text-myGrey mb-5 hover:text-blue-500`}
           >
             Description
           </h6>
         </Link>
-        <Link href="/">
+        <Link href="">
           <h6
             className={`${montserrat.className} text-start font-bold text-[12px] md:lg:text-[14px] text-myGrey mb-5 hover:text-blue-500`}
           >
@@ -23,7 +23,7 @@ const Description = () => {
           </h6>
         </Link>
 
-        <Link href="/">
+        <Link href="">
           <h6
             className={`${montserrat.className} text-start font-bold text-[12px] md:lg:text-[14px] text-myGrey mb-5 hover:text-blue-500`}
           >

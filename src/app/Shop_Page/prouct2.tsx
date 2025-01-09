@@ -1,11 +1,9 @@
 "use client"
-import { Montserrat } from "next/font/google";
 import ProductCards from "./ProductCardComponent";
 import React, { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 async function getData() {
   try {
@@ -26,7 +24,7 @@ async function getData() {
   }
 }
 
-const Product2 = () => {
+export default function Product2 () {
   const [products, setProducts] = useState<any[]>([]);
 
   useEffect(() => {
@@ -59,4 +57,4 @@ const Product2 = () => {
   );
 };
 
-export default Product2;
+// export default Product2;

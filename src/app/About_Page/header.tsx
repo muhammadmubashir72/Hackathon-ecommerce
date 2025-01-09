@@ -53,8 +53,7 @@ export default function Header() {
           </div>
 
           {/* Navbar Links */}
-         {/* Navbar Links */}
-         <ul className="hidden md:flex items-center md:space-x-2 lg:space-x-6">
+          <ul className="hidden md:flex items-center md:space-x-2 lg:space-x-6">
             {[
               { name: "Home", link: "/" },
               { name: "Shop", link: "/Shop_Page", dropdown: true },
@@ -69,7 +68,7 @@ export default function Header() {
                   <div className="flex items-center relative">
                     {/* Shop Link */}
                     <Link
-                      href="/Shop_Page" // Navigate to main Shop page
+                      href="/Shop_Page" 
                       className={`${montserrat.className} font-bold text-sm text-myDark hover:text-blue-500`}
                     >
                       Shop
@@ -151,7 +150,7 @@ export default function Header() {
               { name: "Team", link: "/Team_Page" },
               { name: "Contact", link: "/Contact_Page" },
               { name: "Price", link: "/Price_Page" },
-           ].map((navbar) => (
+            ].map((navbar) => (
               <Link href={navbar.link} key={navbar.name}>
                 <span
                   className={`${montserrat.className} font-bold text-sm text-myGrey hover:text-blue-500`}
@@ -161,8 +160,6 @@ export default function Header() {
               </Link>
             ))}
 
-
-            
             {/* Mobile Shop Dropdown */}
             <div className="relative flex justify-center">
               {/* Shop Button with Link */}

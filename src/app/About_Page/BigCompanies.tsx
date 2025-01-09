@@ -4,7 +4,7 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 const BigCompanies = () => {
   return (
-    //       {/* Big Companies Are Here */}
+    //{/* Big Companies Are Here */}
 
     <div className="bg-black/[0.02] flex flex-col justify-center w-full h-auto items-center text-center mx-auto mt-40 px-6 lg:px-0">
       <h2

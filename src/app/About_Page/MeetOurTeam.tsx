@@ -72,6 +72,8 @@ const MeetOurTeam = () => {
 
             {/* Instagram Icon */}
             <div>
+              {/* Large Device Image */}
+
               <Image
                 src="/user/w-img-inst.png" // Small image
                 alt="Instagram"
@@ -79,6 +81,8 @@ const MeetOurTeam = () => {
                 height={24}
                 className="w-[20px] h-[20px] md:hidden"
               />
+              {/* Small Device Image */}
+
               <Image
                 src="/images/instagram1.png" // Large image
                 alt="Instagram"
@@ -90,6 +94,8 @@ const MeetOurTeam = () => {
 
             {/* Twitter Icon */}
             <div>
+            
+              {/* Large Device Image */}
               <Image
                 src="/user/w-img-twt.png" // Small image
                 alt="Twitter"
@@ -97,6 +103,7 @@ const MeetOurTeam = () => {
                 height={24}
                 className="w-[20px] h-[20px] md:hidden"
               />
+              {/* Small Device Image */}
               <Image
                 src="/images/twitter1.png" // Large image
                 alt="Twitter"

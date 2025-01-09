@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Montserrat } from "next/font/google";
 import ProductCards from "./ProductCardComponent";
 import React, { useEffect, useState } from "react";

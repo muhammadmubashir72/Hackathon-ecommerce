@@ -52,8 +52,7 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Navbar Links */}
-          {/* Navbar Links */}
+           {/* Navbar Links */}
           <ul className="hidden md:flex items-center md:space-x-2 lg:space-x-6">
             {[
               { name: "Home", link: "/" },
