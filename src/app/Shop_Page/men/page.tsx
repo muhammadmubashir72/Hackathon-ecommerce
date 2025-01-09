@@ -3,7 +3,7 @@ import { Montserrat } from "next/font/google";
 import React, { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
-import ProductCards from "../ProductCardComponent";
+import ProductCards from "@/app/components/ShopComponent/ProductCardComponent";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
