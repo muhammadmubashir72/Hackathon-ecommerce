@@ -13,9 +13,11 @@ const CartPage = () => {
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-bold mb-6">Your Cart</h1>
+      <h1 className="text-4xl font-bold my-6 text-center hover:underline text-myDarkOrange">
+        Your Cart
+      </h1>
       {cart.length === 0 ? (
-        <p>Your cart is empty</p> // Agar cart mein koi item nahi hai to yeh message dikhaye
+        <p className="text-xl font-semibold ">Your cart is empty</p> // Agar cart mein koi item nahi hai to yeh message dikhaye
       ) : (
         <div className="space-y-6">
           {cart.map((item) => (

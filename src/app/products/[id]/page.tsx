@@ -26,7 +26,7 @@ interface IProducts {
   };
 }
 
-const ProductDetails = async ({ params }: { params: Promise<Iparams> }) => {
+export default async function ProductDetails  ({ params }: { params: Promise<Iparams> }) {
   const { addToCart } = useCart(); // Use the Cart Context
 
   const [selectedColor, setSelectedColor] = useState<string>("");
@@ -160,7 +160,6 @@ const ProductDetails = async ({ params }: { params: Promise<Iparams> }) => {
                   quantity: 1, // Default quantity
                 })
               }
-              // onClick={handleAddToCart}
               className="w-12 h-12 border rounded-full flex items-center justify-center hover:bg-gray-200"
             >
               <IoCartOutline className="text-gray-600" />
@@ -174,4 +173,3 @@ const ProductDetails = async ({ params }: { params: Promise<Iparams> }) => {
     </div>
   );
 };
-export default ProductDetails;

@@ -1,13 +1,28 @@
-"use client"
-import ProductCards from "./ProductCardComponent";
+"use client";
+import { Montserrat } from "next/font/google";
 import React, { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+import ProductCards from "./ProductCardComponent";
 
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
-async function getData() {
+// Define the Product type
+interface Product {
+  id: string;
+  heading: string;
+  subheading: string;
+  image: string;
+  price: {
+    originalPrice: number;
+    discountedPrice: number;
+  };
+}
+
+// Fetch data function with type annotations
+async function getData(): Promise<Product[]> {
   try {
-    const FetchData = await client.fetch(`*[_type == "shop"]{
+    const FetchData: Product[] = await client.fetch(`*[_type == "shop"]{
       id,
       heading,
       subheading,
@@ -24,12 +39,13 @@ async function getData() {
   }
 }
 
-export default function Product2 () {
-  const [products, setProducts] = useState<any[]>([]);
+const ProductCard = () => {
+  const [products, setProducts] = useState<Product[]>([]); // Use Product[] instead of any[]
 
   useEffect(() => {
     const fetchProducts = async () => {
       const data = await getData();
+      console.log(data);
       setProducts(data);
     };
     fetchProducts();
@@ -37,12 +53,18 @@ export default function Product2 () {
 
   return (
     <div className="items-center my-14">
-      
+      {/* h2 #feature-section.1 */}
+      <h4
+        className={`${montserrat.className} items-center text-center font-normal text-[20px] text-myGrey hover:text-blue-500`}
+      >
+        Kids
+      </h4>
+
       {/* Product Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-12">
-        {products.map((product, index) => (
+        {products.map((product) => (
           <ProductCards
-            key={index}
+            key={product.id}
             detailsLink={`/products/${product.id}`}
             image={urlFor(product.image).url()} // Pass the image
             alt={product.heading}
@@ -57,4 +79,4 @@ export default function Product2 () {
   );
 };
 
-// export default Product2;
+export default ProductCard;

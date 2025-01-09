@@ -7,7 +7,19 @@ import { urlFor } from "@/sanity/lib/image";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
-async function getData() {
+// Define the Product type
+interface Product {
+  id: string;
+  heading: string;
+  subheading: string;
+  image: string;
+  price: {
+    originalPrice: number;
+    discountedPrice: number;
+  };
+}
+
+async function getData():Promise<Product[]> {
   try {
     const FetchData = await client.fetch(`*[_type == "product"]{
       id,
@@ -27,15 +39,18 @@ async function getData() {
 }
 
 const ProductCard = () => {
-  const [products, setProducts] = useState<any[]>([]);
+
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       const data = await getData();
+      console.log(data);
       setProducts(data);
     };
     fetchProducts();
   }, []);
+  ;
 
   return (
     <div className="items-center my-14">
