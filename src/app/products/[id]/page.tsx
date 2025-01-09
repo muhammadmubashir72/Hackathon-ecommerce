@@ -1,4 +1,4 @@
-import ProductDetails from "@/components/product/ProductDetails";
+import ProductDetails from "@/app/components/productDetails/ProductDetails";
 
 interface Iparams {
   id: string;
