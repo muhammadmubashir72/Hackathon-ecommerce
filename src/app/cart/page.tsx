@@ -17,7 +17,7 @@ const CartPage = () => {
         Your Cart
       </h1>
       {cart.length === 0 ? (
-        <p className="text-xl font-semibold ">Your cart is empty</p> // Agar cart mein koi item nahi hai to yeh message dikhaye
+        <p className="text-xl font-semibold ">Your Cart is Empty</p> // Agar cart mein koi item nahi hai to yeh message dikhaye
       ) : (
         <div className="space-y-6">
           {cart.map((item) => (
