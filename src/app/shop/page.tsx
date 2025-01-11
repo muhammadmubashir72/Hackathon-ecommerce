@@ -5,7 +5,7 @@ import Show from "../components/ShopComponent/show";
 import Logo from "../components/ShopComponent/logo";
 import Logo2 from "../components/ShopComponent/logo2";
 import Pagination from "../components/ShopComponent/next";
-import ProductCard from "../components/ShopComponent/prouct2";
+import ProductCard from "../components/ShopComponent/product2";
 
 export default function ShopPager() {
   return (

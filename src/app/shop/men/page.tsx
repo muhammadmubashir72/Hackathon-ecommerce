@@ -20,7 +20,7 @@ interface Product {
 
 async function getData(): Promise<Product[]> {
   try {
-    const FetchData: Product[] = await client.fetch(`*[_type == "product"]{
+    const FetchData: Product[] = await client.fetch(`*[_type == "shop"]{
       id,
       heading,
       subheading,
@@ -39,14 +39,14 @@ async function getData(): Promise<Product[]> {
 
 const ProductCard = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true); // State for loading
+  const [loading, setLoading] = useState<boolean>(true); 
 
   useEffect(() => {
     const fetchProducts = async () => {
       const data = await getData();
       console.log(data);
       setProducts(data);
-      setLoading(false); // Set loading to false once data is fetched
+      setLoading(false); 
     };
     fetchProducts();
   }, []);
@@ -54,12 +54,11 @@ const ProductCard = () => {
   return (
     <div className="items-center my-14">
       <h4
-        className={`${montserrat.className} items-center text-center font-normal text-[20px] text-myGrey hover:text-blue-500`}
+        className={`${montserrat.className} my-10 items-center text-center font-normal text-[20px] text-myGrey hover:text-blue-500`}
       >
         Men
       </h4>
 
-      {/* Loader - Display while data is being fetched */}
       {loading ? (
         <div className="flex justify-center items-center my-12">
           <div className="spinner-border animate-spin inline-block w-12 h-12 border-4 border-solid rounded-full border-current border-t-transparent text-myBlue" role="status">
@@ -67,7 +66,6 @@ const ProductCard = () => {
           </div>
         </div>
       ) : (
-        // Product Grid - Display after data is fetched
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-12">
           {products.map((product) => (
             <ProductCards
