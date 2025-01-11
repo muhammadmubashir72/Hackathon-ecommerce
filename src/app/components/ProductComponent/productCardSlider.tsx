@@ -14,7 +14,7 @@ export default function ProductCardSlide() {
           </li>
         </Link>
         <IoIosArrowForward className="mt-1" />
-        <Link href="/Shop_Page">
+        <Link href="/shop">
           <li className={`${montserrat.className} hover:text-blue-500`}>
             Shop          </li>
         </Link>      </ul>
