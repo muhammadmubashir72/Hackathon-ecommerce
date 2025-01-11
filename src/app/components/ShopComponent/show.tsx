@@ -10,7 +10,7 @@ const Show = () => {
           <h6 className="font-bold text-[14px] text-myGrey hover:text-blue-500">
             Showing all 12 results
           </h6>
-        </div>
+        </div>f
 
         <div className="w-[177px] h-[46px] flex justify-evenly items-center space-x-5">
           <h6 className=" font-bold text-sm text-myGrey hover:text-blue-500">

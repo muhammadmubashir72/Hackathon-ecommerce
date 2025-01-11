@@ -94,7 +94,6 @@ const MeetOurTeam = () => {
 
             {/* Twitter Icon */}
             <div>
-            
               {/* Large Device Image */}
               <Image
                 src="/user/w-img-twt.png" // Small image

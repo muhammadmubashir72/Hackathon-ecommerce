@@ -6,7 +6,7 @@ const TopHeader = () => {
   return (
     <div>
       {/* Navbar Dark */}
-      {/* Responsive Navbar */}
+      {/*  Navbar */}
       <div className="w-full h-[58px] items-center bg-myDark px-6 sm:px-6 lg:px-8 lg:pt-5 hidden lg:block">
         <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
           {/* Contact Info */}

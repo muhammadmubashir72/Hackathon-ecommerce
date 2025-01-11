@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { urlFor } from "@/sanity/lib/image";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
@@ -27,16 +27,15 @@ const ProductCards = (card: Cards) => {
     { name: "dark", class: "bg-myDark" },
   ];
 
-  // Function to handle color change
   const handleColorChange = (colorClass: string) => {
-    setSelectedColor(colorClass); // Update the selected color state
+    setSelectedColor(colorClass);
   };
 
   return (
     <div className="w-full h-auto pr-0 md:pr-5 lg:pr-5 items-center mx-auto transform transition duration-500 hover:scale-105">
       <Link href={card.detailsLink}>
         <Image
-          src={urlFor(card.image).url()} // Corrected image path
+          src={urlFor(card.image).url()}
           alt={card.alt}
           className="object-cover w-full h-auto md:lg:w-[239px] md:lg:h-[427px]  "
           width={239}
@@ -73,12 +72,12 @@ const ProductCards = (card: Cards) => {
             {colors.map((color) => (
               <div
                 key={color.name}
-                onClick={() => handleColorChange(color.class)} // Change color on click
+                onClick={() => handleColorChange(color.class)}
                 className={`w-[20px] h-[20px] rounded-full cursor-pointer ${
                   color.class
                 } ${
                   selectedColor === color.class ? "border-4 border-white" : ""
-                }`} // Add border to the selected color
+                }`}
               />
             ))}
           </div>

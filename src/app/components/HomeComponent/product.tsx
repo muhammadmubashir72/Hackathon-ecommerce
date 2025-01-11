@@ -7,7 +7,6 @@ import { urlFor } from "@/sanity/lib/image";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
-// Define the Product type
 interface Product {
   id: string;
   heading: string;
@@ -19,7 +18,7 @@ interface Product {
   };
 }
 
-async function getData():Promise<Product[]> {
+async function getData(): Promise<Product[]> {
   try {
     const FetchData = await client.fetch(`*[_type == "product"]{
       id,
@@ -39,22 +38,21 @@ async function getData():Promise<Product[]> {
 }
 
 const ProductCard = () => {
-
   const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setLoading(true);
       const data = await getData();
-      console.log(data);
       setProducts(data);
+      setLoading(false);
     };
     fetchProducts();
   }, []);
-  ;
 
   return (
     <div className="items-center my-14">
-      {/* h2 #feature-section.1 */}
       <h4
         className={`${montserrat.className} items-center text-center font-normal text-[20px] text-myGrey hover:text-blue-500`}
       >
@@ -73,21 +71,32 @@ const ProductCard = () => {
         Problems trying to resolve the conflict between
       </p>
 
-      {/* Product Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-12">
-        {products.map((product, index) => (
-          <ProductCards
-            key={index}
-            detailsLink={`/products/${product.id}`}
-            image={urlFor(product.image).url()} // Pass the image
-            alt={product.heading}
-            heading={product.heading} // Pass the heading
-            department={product.subheading} // Pass the department
-            originalPrice={`$${product.price.originalPrice}`} // Pass the original price
-            discountedPrice={`$${product.price.discountedPrice}`} // Pass the discounted price
-          />
-        ))}
-      </div>
+      {loading ? (
+        <div
+          className="flex justify-center items-center pointer-events-none"
+          style={{ height: "200px" }}
+        >
+          <div
+            className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
+            aria-label="Loading..."
+          ></div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-12">
+          {products.map((product, index) => (
+            <ProductCards
+              key={index}
+              detailsLink={`/products/${product.id}`}
+              image={urlFor(product.image).url()}
+              alt={product.heading}
+              heading={product.heading}
+              department={product.subheading}
+              originalPrice={`$${product.price.originalPrice}`}
+              discountedPrice={`$${product.price.discountedPrice}`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

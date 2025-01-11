@@ -7,7 +7,6 @@ import ProductCards from "@/app/components/ShopComponent/ProductCardComponent";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
-// Define the Product type
 interface Product {
   id: string;
   heading: string;
@@ -19,7 +18,6 @@ interface Product {
   };
 }
 
-// Fetch data function with type annotations
 async function getData(): Promise<Product[]> {
   try {
     const FetchData: Product[] = await client.fetch(`*[_type == "product"]{
@@ -40,7 +38,7 @@ async function getData(): Promise<Product[]> {
 }
 
 const ProductCard = () => {
-  const [products, setProducts] = useState<Product[]>([]); // Use Product[] instead of any[]
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -53,7 +51,6 @@ const ProductCard = () => {
 
   return (
     <div className="items-center my-14">
-      {/* h2 #feature-section.1 */}
       <h4
         className={`${montserrat.className} items-center text-center font-normal text-[20px] text-myGrey hover:text-blue-500`}
       >
@@ -66,12 +63,12 @@ const ProductCard = () => {
           <ProductCards
             key={product.id}
             detailsLink={`/products/${product.id}`}
-            image={urlFor(product.image).url()} // Pass the image
+            image={urlFor(product.image).url()}
             alt={product.heading}
-            heading={product.heading} // Pass the heading
-            department={product.subheading} // Pass the department
-            originalPrice={`$${product.price.originalPrice}`} // Pass the original price
-            discountedPrice={`$${product.price.discountedPrice}`} // Pass the discounted price
+            heading={product.heading}
+            department={product.subheading}
+            originalPrice={`$${product.price.originalPrice}`}
+            discountedPrice={`$${product.price.discountedPrice}`}
           />
         ))}
       </div>

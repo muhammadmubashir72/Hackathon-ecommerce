@@ -7,16 +7,11 @@ import React from "react";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 const Faqs = () => {
-  // State to track visibility for each item
-  const [visible, setVisible] = useState<boolean[]>(
-    Array(6).fill(true) // Initial visibility for 6 items
-  );
+  const [visible, setVisible] = useState<boolean[]>(Array(6).fill(true));
 
   // Toggle function
   const toggleVisibility = (index: number) => {
-    setVisible(
-      (prev) => prev.map((v, i) => (i === index ? !v : v)) // Toggle visibility for the clicked index
-    );
+    setVisible((prev) => prev.map((v, i) => (i === index ? !v : v)));
   };
   return (
     <div>
@@ -56,7 +51,7 @@ const Faqs = () => {
                 >
                   the quick fox jumps over the lazy dog
                 </h5>
-                {visible[index] && ( // Show paragraph only if it's visible
+                {visible[index] && (
                   <div className="w-full lg:w-[408px] h-[80px] items-center">
                     <p
                       className={`${montserrat.className} font-normal text-sm text-myGrey hover:text-blue-500`}
