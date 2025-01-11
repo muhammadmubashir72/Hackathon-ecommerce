@@ -53,12 +53,7 @@ const ProductCard = () => {
 
   return (
     <div className="items-center my-14">
-      <h4
-        className={`${montserrat.className} items-center text-center font-normal text-[20px] text-myGrey hover:text-blue-500`}
-      >
-        Kids
-      </h4>
-
+    
       {loading ? (
         <div
           className="flex justify-center items-center pointer-events-none"

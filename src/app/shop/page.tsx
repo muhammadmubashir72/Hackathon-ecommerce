@@ -3,9 +3,9 @@ import Shop from "../components/ShopComponent/shop";
 import Product from "../components/ShopComponent/prouct";
 import Show from "../components/ShopComponent/show";
 import Logo from "../components/ShopComponent/logo";
-import Product2 from "../components/ProductComponent/product";
 import Logo2 from "../components/ShopComponent/logo2";
 import Pagination from "../components/ShopComponent/next";
+import ProductCard from "../components/ShopComponent/prouct2";
 
 export default function ShopPager() {
   return (
@@ -14,7 +14,7 @@ export default function ShopPager() {
       <Product />
       <Show />
       <Logo />
-      <Product2 />
+      <ProductCard />
       <Pagination />
       <Logo2 />
     </div>
