@@ -1,11 +1,9 @@
 "use client";
-import { Montserrat } from "next/font/google";
 import React, { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import ProductCards from "./ProductCardComponent";
 
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 interface Product {
   id: string;
