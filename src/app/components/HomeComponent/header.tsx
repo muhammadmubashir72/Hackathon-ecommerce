@@ -31,34 +31,58 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <h3
-            className={`${montserrat.className} font-bold text-xl lg:text-2xl text-myDark hover:text-blue-500`}
+            className={`${montserrat.className} font-bold text-xl lg:text-2xl text-myDark hover:text-myBlue`}
           >
             Bandage
           </h3>
 
           {/* Icons for Small Screens */}
           <div className="flex items-center md:hidden gap-4">
-            {["searching", "cart1"].map((icon) => (
+            <Link href="/cart">
               <Image
-                key={icon}
-                src={`/images/${icon}.png`}
-                alt={icon}
+                src={`/images/cart.png`}
+                alt={"cart"}
                 width={22}
                 height={22}
               />
-            ))}
+            </Link>
             <button onClick={toggleMenu} className="focus:outline-none">
-              <Image
-                src={`/images/${menuOpen ? "close-icon.png" : "bars-icon.png"}`}
-                alt={menuOpen ? "Close Menu" : "Open Menu"}
-                width={22}
-                height={22}
-              />
+              {menuOpen ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-[#2eabe8]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-[#2eabe8]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
             </button>
           </div>
 
           {/* Navbar Links */}
-          <ul className="hidden md:flex items-center md:space-x-2 lg:space-x-6">
+          <ul className="hidden md:flex items-center  md:space-x-2 lg:space-x-6">
             {[
               { name: "Home", link: "/" },
               { name: "Shop", link: "/shop", dropdown: true },
@@ -70,11 +94,11 @@ export default function Header() {
             ].map((navbar) => (
               <li key={navbar.link} className="relative">
                 {navbar.name === "Shop" ? (
-                  <div className="flex items-center relative">
+                  <div className="mt-0 md:mt-1 flex items-center relative">
                     {/* Shop Link */}
                     <Link
                       href="/shop" // Navigate to main Shop page
-                      className={`${montserrat.className} font-bold text-sm text-myDark hover:text-blue-500`}
+                      className={`${montserrat.className} font-bold text-[12px] lg:text-sm text-myBlue hover:text-myDark`}
                     >
                       Shop
                     </Link>
@@ -86,7 +110,7 @@ export default function Header() {
                       aria-label="Toggle Shop Dropdown"
                     >
                       <FaAngleDown
-                        className={`transform transition-transform duration-200 ${
+                        className={` text-myBlue hover:text-myDark transform transition-transform duration-200 ${
                           shopDropdownOpen ? "rotate-180" : ""
                         }`}
                       />
@@ -107,7 +131,7 @@ export default function Header() {
                               href={category.link}
                               onClick={closeShopDropdown} // Close dropdown when a category is clicked
                             >
-                              <span className="text-sm font-medium text-myGrey hover:text-blue-500">
+                              <span className="text-[12px] lg:text-sm font-medium text-myBlue hover:text-myDark">
                                 {category.name}
                               </span>
                             </Link>
@@ -119,7 +143,7 @@ export default function Header() {
                 ) : (
                   <Link
                     href={navbar.link}
-                    className={`${montserrat.className} font-bold text-sm text-myGrey hover:text-blue-500`}
+                    className={`${montserrat.className} font-bold text-[12px] lg:text-sm text-myBlue hover:text-myDark`}
                   >
                     {navbar.name}
                   </Link>
@@ -129,29 +153,29 @@ export default function Header() {
           </ul>
 
           {/* Login and Icons */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center md:space-x-2 lg:space-x-4">
             <Image
               src="/images/contact.png"
               alt="contact"
-              className="w-5 h-5 lg:w-[22px] lg:h-[22px]"
+              className="w-5 h-5 md:w-[18px] md:h-[18px] lg:w-[22px] lg:h-[22px]"
               width={22}
               height={22}
             />
             <Link
               href=""
-              className={`${montserrat.className} font-bold text-sm text-myBlue hover:text-blue-500`}
+              className={`${montserrat.className} text-[12px] font-bold lg:text-sm text-myBlue hover:text-myDark`}
             >
               Login / Register
             </Link>
-            <div className="flex space-x-4 items-center">
+            <div className="flex md:space-x-2 lg:space-x-4 items-center">
               {[
-                { name: "search", link: "" }, // Update link
-                { name: "cart", link: "/cart" }, // Update link
-                { name: "heart", link: "" }, // Update link
+                { name: "search", link: "" },
+                { name: "cart", link: "/cart" },
+                { name: "heart", link: "" },
               ].map((icon) => (
                 <Link
-                  key={icon.name} // Use `icon.name` as key
-                  href={icon.link} // Use `icon.link` here
+                  key={icon.name}
+                  href={icon.link}
                   className="hover:opacity-80"
                 >
                   <Image
@@ -159,7 +183,7 @@ export default function Header() {
                     alt={icon.name}
                     width={22}
                     height={22}
-                    className="object-cover w-5 h-5 md:lg:w-[22px] md:lg:h-[22px]"
+                    className="object-cover w-5 h-5 md:w-[18px] md:h-[18px] lg:w-[22px] lg:h-[22px]"
                   />
                 </Link>
               ))}
@@ -181,7 +205,7 @@ export default function Header() {
             ].map((navbar) => (
               <Link href={navbar.link} key={navbar.name}>
                 <span
-                  className={`${montserrat.className} font-bold text-sm text-myGrey hover:text-blue-500`}
+                  className={`${montserrat.className} font-bold text-sm text-myBlue hover:text-myDark`}
                 >
                   {navbar.name}
                 </span>
@@ -193,7 +217,7 @@ export default function Header() {
               {/* Shop Button with Link */}
               <Link
                 href="/shop"
-                className={`${montserrat.className} font-bold text-sm text-myGrey flex items-center justify-center hover:text-blue-500`}
+                className={`${montserrat.className} font-bold text-sm text-myBlue flex items-center justify-center hover:text-myDark`}
               >
                 Shop
               </Link>
@@ -203,7 +227,7 @@ export default function Header() {
                 aria-label="Toggle Shop Dropdown"
               >
                 <FaAngleDown
-                  className={`transform transition-transform duration-200 ${
+                  className={`text-myBlue hover:text-myDark transform transition-transform duration-200 ${
                     shopDropdownOpen ? "rotate-180" : ""
                   }`}
                 />
@@ -218,13 +242,13 @@ export default function Header() {
                   ].map((category) => (
                     <li
                       key={category.link}
-                      className="px-4 py-2 hover:bg-gray-100"
+                      className="px-4 py-2  hover:bg-gray-100"
                     >
                       <Link
                         href={category.link}
                         onClick={closeShopDropdown} // Close dropdown when a category is clicked
                       >
-                        <span className="text-sm font-medium text-myGrey hover:text-blue-500">
+                        <span className="text-sm font-medium text-myBlue hover:text-myDark">
                           {category.name}
                         </span>
                       </Link>
@@ -244,7 +268,7 @@ export default function Header() {
                 />
                 <Link
                   href=""
-                  className={`${montserrat.className} font-normal text-[30] text-myBlue hover:text-blue-500`}
+                  className={`${montserrat.className} font-normal text-[30] text-myBlue hover:text-myDark`}
                 >
                   Login / Register
                 </Link>
@@ -254,7 +278,6 @@ export default function Header() {
               <div className="flex flex-col space-y-4 items-center my-4">
                 {[
                   { name: "search", Link: "" },
-                  { name: "cart", Link: "/product" },
                   { name: "heart", Link: "" },
                 ].map((icon) => (
                   <div key={icon.Link} className="relative flex items-center">

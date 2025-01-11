@@ -82,7 +82,13 @@ const ProductDetails = ({ productId }: { productId: string }) => {
   }
 
   if (!result) {
-    return <p>Product not found</p>;
+    return (
+      <p
+        className={`${montserrat.className} text-center text-3xl font-semibold text-gray-800`}
+      >
+        Product not found
+      </p>
+    );
   }
 
   return (
@@ -161,13 +167,15 @@ const ProductDetails = ({ productId }: { productId: string }) => {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col md:flex-row space-x-4 pt-4">
-            <button className="px-6 py-3 bg-myBlue text-white rounded hover:bg-blue-600 transition">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+            <button className="w-full sm:w-auto px-6 py-3 bg-myBlue text-white rounded hover:bg-blue-600 transition">
               Select Options
             </button>
-            <button className="w-12 h-12 border rounded-full flex items-center justify-center hover:bg-gray-200">
+
+            <button className="w-full sm:w-12 h-12 border rounded-full flex items-center justify-center hover:bg-gray-200">
               <CiHeart className="text-gray-600" />
             </button>
+
             <button
               onClick={() =>
                 addToCart({
@@ -178,11 +186,12 @@ const ProductDetails = ({ productId }: { productId: string }) => {
                   quantity: 1,
                 })
               }
-              className="w-12 h-12 border rounded-full flex items-center justify-center hover:bg-gray-200"
+              className="w-full sm:w-12 h-12 border rounded-full flex items-center justify-center hover:bg-gray-200"
             >
               <IoCartOutline className="text-gray-600" />
             </button>
-            <button className="w-12 h-12 border rounded-full flex items-center justify-center hover:bg-gray-200">
+
+            <button className="w-full sm:w-12 h-12 border rounded-full flex items-center justify-center hover:bg-gray-200">
               <FaEye className="text-gray-600" />
             </button>
           </div>

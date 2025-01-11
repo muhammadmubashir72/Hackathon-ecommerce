@@ -51,6 +51,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   const removeFromCart = (id: string) => {
     setCart((prevCart) => prevCart.filter((cartItem) => cartItem.id !== id));
+    alert("Remove to cart Successfully!");
   };
 
   return (
