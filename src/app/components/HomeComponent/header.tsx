@@ -20,6 +20,10 @@ export default function Header() {
     setShopDropdownOpen(!shopDropdownOpen);
   };
 
+  const closeShopDropdown = () => {
+    setShopDropdownOpen(false);
+  };
+
   return (
     <div className="w-full">
       {/* Navbar Light */}
@@ -57,19 +61,19 @@ export default function Header() {
           <ul className="hidden md:flex items-center md:space-x-2 lg:space-x-6">
             {[
               { name: "Home", link: "/" },
-              { name: "Shop", link: "/Shop_Page", dropdown: true },
-              { name: "Product", link: "/Product_Page", dropdown: true },
-              { name: "About", link: "/About_Page" },
-              { name: "Team", link: "/Team_Page" },
-              { name: "Contact", link: "/Contact_Page" },
-              { name: "Price", link: "/Price_Page" },
-           ].map((navbar) => (
+              { name: "Shop", link: "/shop", dropdown: true },
+              { name: "Product", link: "/product", dropdown: true },
+              { name: "About", link: "/about" },
+              { name: "Team", link: "/team" },
+              { name: "Contact", link: "/contact" },
+              { name: "Price", link: "/price" },
+            ].map((navbar) => (
               <li key={navbar.link} className="relative">
                 {navbar.name === "Shop" ? (
                   <div className="flex items-center relative">
                     {/* Shop Link */}
                     <Link
-                      href="/Shop_Page" // Navigate to main Shop page
+                      href="/shop" // Navigate to main Shop page
                       className={`${montserrat.className} font-bold text-sm text-myDark hover:text-blue-500`}
                     >
                       Shop
@@ -91,15 +95,18 @@ export default function Header() {
                     {shopDropdownOpen && (
                       <ul className="absolute mt-2 bg-white shadow-md py-2 w-40 z-50">
                         {[
-                          { name: "Men", link: "/Shop_Page/men" },
-                          { name: "Women", link: "/Shop_Page/women" },
-                          { name: "Kids", link: "/Shop_Page/kids" },
+                          { name: "Men", link: "/shop/men" },
+                          { name: "Women", link: "/shop/women" },
+                          { name: "Kids", link: "/shop/kids" },
                         ].map((category) => (
                           <li
                             key={category.link}
                             className="px-4 py-2 hover:bg-gray-100"
                           >
-                            <Link href={category.link}>
+                            <Link
+                              href={category.link}
+                              onClick={closeShopDropdown} // Close dropdown when a category is clicked
+                            >
                               <span className="text-sm font-medium text-myGrey hover:text-blue-500">
                                 {category.name}
                               </span>
@@ -165,11 +172,12 @@ export default function Header() {
           <div className="flex flex-col mt-4 md:hidden text-center space-y-2">
             {[
               { name: "Home", link: "/" },
-              { name: "Price", link: "/Price_Page" },
-              { name: "Team", link: "/Team_Page" },
-              { name: "About", link: "/About_Page" },
-              { name: "Product", link: "/Product_Page", dropdown: true },
-              { name: "Contact", link: "/Contact_Page" },
+              { name: "Shop", link: "/shop", dropdown: true },
+              { name: "Product", link: "/product", dropdown: true },
+              { name: "About", link: "/about" },
+              { name: "Team", link: "/team" },
+              { name: "Contact", link: "/contact" },
+              { name: "Price", link: "/price" },
             ].map((navbar) => (
               <Link href={navbar.link} key={navbar.name}>
                 <span
@@ -184,7 +192,7 @@ export default function Header() {
             <div className="relative flex justify-center">
               {/* Shop Button with Link */}
               <Link
-                href="/Shop_Page"
+                href="/shop"
                 className={`${montserrat.className} font-bold text-sm text-myGrey flex items-center justify-center hover:text-blue-500`}
               >
                 Shop
@@ -204,15 +212,18 @@ export default function Header() {
               {shopDropdownOpen && (
                 <ul className="absolute mt-2 bg-white shadow-md py-2 w-40 z-50">
                   {[
-                    { name: "Men", link: "/Shop_Page/men" },
-                    { name: "Women", link: "/Shop_Page/women" },
-                    { name: "Kids", link: "/Shop_Page/kids" },
+                    { name: "Men", link: "/shop/men" },
+                    { name: "Women", link: "/shop/women" },
+                    { name: "Kids", link: "/shop/kids" },
                   ].map((category) => (
                     <li
                       key={category.link}
                       className="px-4 py-2 hover:bg-gray-100"
                     >
-                      <Link href={category.link}>
+                      <Link
+                        href={category.link}
+                        onClick={closeShopDropdown} // Close dropdown when a category is clicked
+                      >
                         <span className="text-sm font-medium text-myGrey hover:text-blue-500">
                           {category.name}
                         </span>
@@ -243,7 +254,7 @@ export default function Header() {
               <div className="flex flex-col space-y-4 items-center my-4">
                 {[
                   { name: "search", Link: "" },
-                  { name: "cart", Link: "/Product_Page" },
+                  { name: "cart", Link: "/product" },
                   { name: "heart", Link: "" },
                 ].map((icon) => (
                   <div key={icon.Link} className="relative flex items-center">
@@ -266,4 +277,3 @@ export default function Header() {
     </div>
   );
 }
-
