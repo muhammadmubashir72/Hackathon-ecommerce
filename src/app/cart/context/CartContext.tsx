@@ -8,6 +8,8 @@ interface CartItem {
   price: number;
   image: string;
   quantity: number;
+  selectedColor: string;
+  selectedSize: string;
 }
 
 interface CartContextType {
@@ -25,11 +27,11 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const addToCart = (item: CartItem) => {
     console.log("Adding item:", item);
     setCart((prevCart) => {
-      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
+      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id && cartItem.selectedColor === item.selectedColor && cartItem.selectedSize === item.selectedSize);
       if (existingItem) {
         console.log("Item already in cart, updating quantity");
         return prevCart.map((cartItem) =>
-          cartItem.id === item.id
+          cartItem.id === item.id && cartItem.selectedColor === item.selectedColor && cartItem.selectedSize === item.selectedSize
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
             : cartItem
         );
@@ -37,9 +39,10 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
       console.log("New item added to cart");
       return [...prevCart, { ...item, quantity: 1 }];
     });
+  
     alert("Added to cart Successfully!");
   };
-
+  
   const updateQuantity = (id: string, quantity: number) => {
     if (quantity < 1) return;
     setCart((prevCart) =>

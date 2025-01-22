@@ -117,27 +117,31 @@ export default function Header() {
                     </button>
                     {/* Dropdown Menu */}
                     {shopDropdownOpen && (
-                      <ul className="absolute mt-2 bg-white shadow-md py-2 w-40 z-50">
-                        {[
-                          { name: "Men", link: "/shop/men" },
-                          { name: "Women", link: "/shop/women" },
-                          { name: "Kids", link: "/shop/kids" },
-                        ].map((category) => (
-                          <li
-                            key={category.link}
-                            className="px-4 py-2 hover:bg-gray-100"
-                          >
-                            <Link
-                              href={category.link}
-                              onClick={closeShopDropdown} // Close dropdown when a category is clicked
+                      <div className="relative">
+                        <ul className="absolute mt-2 bg-white shadow-md py-2 w-40 z-50">
+                          {[
+                            { name: "Men", link: "/shop/men" },
+                            { name: "Women", link: "/shop/women" },
+                            { name: "Chair", link: "/shop/chair" },
+                            { name: "Drinkware", link: "/shop/drinkware" },
+                            { name: "Cutlery", link: "/shop/cutlery" },
+                          ].map((category) => (
+                            <li
+                              key={category.link}
+                              className="px-4 py-2 hover:bg-gray-100"
                             >
-                              <span className="text-[12px] lg:text-sm font-medium text-myBlue hover:text-myDark">
-                                {category.name}
-                              </span>
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                              <Link
+                                href={category.link}
+                                onClick={closeShopDropdown} // Close dropdown when a category is clicked
+                              >
+                                <span className="text-[12px] lg:text-sm font-medium text-myBlue hover:text-myDark">
+                                  {category.name}
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     )}
                   </div>
                 ) : (
@@ -154,24 +158,26 @@ export default function Header() {
 
           {/* Login and Icons */}
           <div className="hidden md:flex items-center md:space-x-2 lg:space-x-4">
-            <Image
-              src="/images/contact.png"
-              alt="contact"
-              className="w-5 h-5 md:w-[18px] md:h-[18px] lg:w-[22px] lg:h-[22px]"
-              width={22}
-              height={22}
-            />
+            <Link href="/user-profile">
+              <Image
+                src="/images/contact.png"
+                alt="contact"
+                className="w-5 h-5 md:w-[18px] md:h-[18px] lg:w-[22px] lg:h-[22px]"
+                width={22}
+                height={22}
+              />
+            </Link>
             <Link
-              href=""
+              href="/login"
               className={`${montserrat.className} text-[12px] font-bold lg:text-sm text-myBlue hover:text-myDark`}
             >
               Login / Register
             </Link>
-            <div className="flex md:space-x-2 lg:space-x-4 items-center">
+            <div className=" flex md:space-x-2 lg:space-x-4 items-center">
               {[
                 { name: "search", link: "" },
                 { name: "cart", link: "/cart" },
-                { name: "heart", link: "" },
+                { name: "heart", link: "/wishlist" },
               ].map((icon) => (
                 <Link
                   key={icon.name}
@@ -238,7 +244,9 @@ export default function Header() {
                   {[
                     { name: "Men", link: "/shop/men" },
                     { name: "Women", link: "/shop/women" },
-                    { name: "Kids", link: "/shop/kids" },
+                    { name: "Chair", link: "/shop/chair" },
+                    { name: "Drinkware", link: "/shop/drinkware" },
+                    { name: "Cutlery", link: "/shop/cutlery" },
                   ].map((category) => (
                     <li
                       key={category.link}
@@ -275,10 +283,10 @@ export default function Header() {
               </div>
 
               {/* Icons in a block-wise layout */}
-              <div className="flex flex-col space-y-4 items-center my-4">
+              <div className="flex flex-col space-y-4 items-center my-4 sm:hidden">
                 {[
                   { name: "search", Link: "" },
-                  { name: "heart", Link: "" },
+                  { name: "heart", Link: "/wishlist" },
                 ].map((icon) => (
                   <div key={icon.Link} className="relative flex items-center">
                     <Link href={icon.Link} className="hover:opacity-80">

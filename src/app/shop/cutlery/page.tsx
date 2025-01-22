@@ -20,7 +20,7 @@ interface Product {
 
 async function getData(): Promise<Product[]> {
   try {
-    const query = `*[ (_type == "product" || _type == "shop") && subheading match "Women" ]{
+    const query = `*[ (_type == "seller") && subheading match "Cutlery" ]{
       id,
       heading,
       subheading,
@@ -55,8 +55,7 @@ const ProductCard = () => {
     <div className="items-center my-14">
       <h4
         className={`${montserrat.className} my-10 items-center text-center font-normal text-[20px] text-myGrey hover:text-blue-500`}
-      >
-        Women
+      >Cutlery 
       </h4>
 
       {loading ? (

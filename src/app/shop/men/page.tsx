@@ -20,7 +20,7 @@ interface Product {
 
 async function getData(): Promise<Product[]> {
   try {
-    const FetchData: Product[] = await client.fetch(`*[_type == "shop"]{
+    const query = `*[ (_type == "product" || _type == "shop") && subheading match "Men" ]{
       id,
       heading,
       subheading,
@@ -29,7 +29,8 @@ async function getData(): Promise<Product[]> {
         originalPrice,
         discountedPrice
       },
-    }`);
+    }`
+    const FetchData: Product[] = await client.fetch( query);
     return FetchData;
   } catch (error) {
     console.error("Error fetching data", error);
@@ -39,14 +40,13 @@ async function getData(): Promise<Product[]> {
 
 const ProductCard = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true); 
-
+  const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
     const fetchProducts = async () => {
       const data = await getData();
       console.log(data);
       setProducts(data);
-      setLoading(false); 
+      setLoading(false);
     };
     fetchProducts();
   }, []);
@@ -61,7 +61,10 @@ const ProductCard = () => {
 
       {loading ? (
         <div className="flex justify-center items-center my-12">
-          <div className="spinner-border animate-spin inline-block w-12 h-12 border-4 border-solid rounded-full border-current border-t-transparent text-myBlue" role="status">
+          <div
+            className="spinner-border animate-spin inline-block w-12 h-12 border-4 border-solid rounded-full border-current border-t-transparent text-myBlue"
+            role="status"
+          >
             <span className="sr-only">Loading...</span>
           </div>
         </div>

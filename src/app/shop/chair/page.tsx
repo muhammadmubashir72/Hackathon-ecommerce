@@ -20,7 +20,7 @@ interface Product {
 
 async function getData(): Promise<Product[]> {
   try {
-    const FetchData: Product[] = await client.fetch(`*[_type == "product"]{
+    const query = `*[ (_type == "seller") && subheading match "Chair" ]{
       id,
       heading,
       subheading,
@@ -29,7 +29,8 @@ async function getData(): Promise<Product[]> {
         originalPrice,
         discountedPrice
       },
-    }`);
+    }`
+    const FetchData: Product[] = await client.fetch( query);
     return FetchData;
   } catch (error) {
     console.error("Error fetching data", error);
@@ -53,9 +54,8 @@ const ProductCard = () => {
   return (
     <div className="items-center my-14">
       <h4
-        className={`${montserrat.className} items-center text-center font-normal text-[20px] my-10 text-myGrey hover:text-blue-500`}
-      >
-        Kids
+        className={`${montserrat.className} my-10 items-center text-center font-normal text-[20px] text-myGrey hover:text-blue-500`}
+      >Chair
       </h4>
 
       {loading ? (
