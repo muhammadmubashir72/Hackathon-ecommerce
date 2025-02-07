@@ -29,22 +29,6 @@ export default function Header() {
   const closeShopDropdown = () => {
     setShopDropdownOpen(false);
   };
-  // Fetch products based on search term
-
-  // Fetch products based on search term
-  // useEffect(() => {
-  //   if (searchTerm.length > 2) {
-  //     client
-  //       .fetch(
-  //         `*[_type == "seller" || _type == "shop" || _type == "product"
-  //         " && title match "${searchTerm}*"]`
-  //       ) // Adjust query based on your schema
-  //       .then((data) => setSearchResults(data))
-  //       .catch((err) => console.log(err));
-  //   } else {
-  //     setSearchResults([]); // Clear results if search term is too short
-  //   }
-  // }, [searchTerm]);
 
   return (
     <div className="w-full">
@@ -61,50 +45,8 @@ export default function Header() {
           </Link>
           {/* Icons for Small Screens */}
           <div className="flex items-center md:hidden gap-4">
-            {/* Search Icon */}
-            {/* Search Icon with Toggle Input */}
-            {/* <div className="relative"> */}
-            {/* <input
-                type="text"
-                placeholder="Search..."
-                value={searchTerm}
-                // onChange={handleSearchChange}
-                className="border-2 border-myBlue w-40 p-2"
-              /> */}
-            {/* <FaSearch className="absolute text-[#2eabe8]" /> */}
-            {/* </div> */}
-
-            {/* Search Results Dialog */}
-            {/* {isSearchDialogOpen && searchResults.length > 0 && (
-              <div className="fixed top-0 left-0 w-full h-full bg-opacity-50 bg-gray-500 z-50 flex items-center justify-center">
-                <div className="bg-white p-4 rounded-md shadow-lg w-1/3">
-                  <h3 className="font-bold text-lg mb-2">Search Results</h3>
-                  <ul>
-                    {searchResults.map((product: Product) => (
-                      <li
-                        key={product.id}
-                        className="p-2 hover:bg-gray-100 flex items-center"
-                      >
-                        <img
-                          src={product.image}
-                          alt={product.heading}
-                          className="w-10 h-10 object-cover mr-2"
-                        />
-                        <span>{product.heading}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <button
-                    onClick={() => setIsSearchDialogOpen(false)}
-                    className="absolute top-2 right-2 text-2xl text-myBlue"
-                  >
-                    ×
-                  </button>
-                </div>
-              </div>
-            )} */}
             {/* Wishlist Icon */}
-            <Link href="">
+            <Link href="/search">
               <FaSearch className="text-[#2eabe8] w-[17px] h-[17px]" />
             </Link>
             <Link href="/wishlist">
@@ -115,7 +57,6 @@ export default function Header() {
               <FaShoppingCart className="text-[#2eabe8] w-[17px] h-[17px]" />
             </Link>
             {/* User Profile Icon */}
-            {/* User Profile or Login/Register */}
             {status === "authenticated" ? (
               <Link href="/user-profile">
                 <Image
@@ -245,8 +186,8 @@ export default function Header() {
                 {
                   name: "search",
                   icon: <FaSearch size={20} color="#23A6F0" />,
-                  link: "",
-                  isSearch: true, // Mark the search item to be handled differently
+                  link: "/search",
+                  // isSearch: true, // Mark the s/.earch item to be handled differently
                 },
                 {
                   name: "cart",
@@ -261,66 +202,11 @@ export default function Header() {
               ].map((icon) => (
                 <div key={icon.name} className="relative">
                   {/* Render search button */}
-                  {icon.isSearch ? (
-                    <button
-                      // onClick={() =>
-                      //   setIsSearchInputVisible(!isSearchInputVisible)
-                      // }
-                      className="hover:opacity-80 mt-2"
-                    >
-                      <div className="w-5 h-5 md:w-[18px] md:h-[18px] lg:w-[22px] lg:h-[22px]">
-                        {icon.icon}
-                      </div>
-                    </button>
-                  ) : (
-                    // Render other icons normally
-                    <Link href={icon.link} className="hover:opacity-80">
-                      <div className="w-5 h-5 md:w-[18px] md:h-[18px] lg:w-[22px] lg:h-[22px]">
-                        {icon.icon}
-                      </div>
-                    </Link>
-                  )}
-
-                  {/* Conditionally render search input */}
-                  {/* Conditionally render search input */}
-                  {/* {isSearchInputVisible && icon.isSearch && (
-                    <div className="border-2 border-myBlue absolute right-3 transform -translate-x-1/2 top-0  md:w-40 lg:w-40">
-                      <input
-                        type="text"
-                        placeholder="Search..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        className="border p-2 rounded w-full"
-                      />
+                  <Link href={icon.link} className="hover:opacity-80">
+                    <div className="w-5 h-5 md:w-[18px] md:h-[18px] lg:w-[22px] lg:h-[22px]">
+                      {icon.icon}
                     </div>
-                  )} */}
-
-                  {/* Search Results Dropdown */}
-
-                  {/* Search Results Dropdown */}
-                  {/* {isSearchInputVisible && searchResults.length > 0 && (
-                    <div className="absolute mt-2 bg-white shadow-md w-40">
-                      <ul>
-                        {searchResults.map((product: Product) => (
-                          <li
-                            key={product.id}
-                            className="p-2 hover:bg-gray-100"
-                          >
-                            <div>
-                              <Image
-                                width={200}
-                                height={200}
-                                src={product.image}
-                                alt={product.heading}
-                                className="w-10 h-10 object-cover"
-                              />
-                              <span>{product.heading}</span>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )} */}
+                  </Link>
                 </div>
               ))}
             </div>
