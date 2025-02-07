@@ -1,7 +1,7 @@
 "use client"
 import { CheckCheck } from "lucide-react";
 import Link from "next/link";
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 // import { useCart } from "../cart/context/CartContext";
 
 const StripeSuccess = () => {
