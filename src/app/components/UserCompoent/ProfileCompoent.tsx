@@ -1,5 +1,5 @@
 "use client";
-
+import { signOut } from "next-auth/react";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -41,7 +41,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
           onClick={() => setView("profile")}
           className={`px-4 py-2 rounded-md ${
             view === "profile"
-              ? "bg-blue-500 text-white"
+              ? "bg-myBlue text-white"
               : "bg-gray-200 text-gray-700 hover:bg-gray-300"
           } transition duration-300`}
         >
@@ -51,7 +51,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
           onClick={() => setView("history")}
           className={`px-4 py-2 rounded-md ${
             view === "history"
-              ? "bg-blue-500 text-white"
+              ? "bg-myBlue text-white"
               : "bg-gray-200 text-gray-700 hover:bg-gray-300"
           } transition duration-300`}
         >
@@ -65,12 +65,14 @@ const UserProfile: React.FC<UserProfileProps> = ({
           {/* Profile Header */}
           <div className="flex items-center space-x-6">
             <Image
+              width={300}
+              height={300}
               src={profilePicture}
               alt={`${name}'s profile`}
               className="w-24 h-24 rounded-full border-4 border-gray-200 shadow-md"
             />
             <div>
-              <h1 className="text-2xl font-semibold text-gray-800">{name}</h1>
+              <h1 className="text-xl font-semibold text-gray-800">{name}</h1>
               <p className="text-gray-600">@{username}</p>
             </div>
           </div>
@@ -100,13 +102,23 @@ const UserProfile: React.FC<UserProfileProps> = ({
 
           {/* Action Buttons */}
           <div className="mt-6 flex space-x-4">
-            <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300">
+            <button className="px-4 py-2 bg-myBlue text-white rounded-md hover:bg-blue-600 transition duration-300">
               Follow
             </button>
             <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 transition duration-300">
               Message
             </button>
           </div>
+          <div className="mt-6">
+          <div className="mt-8">
+        <button
+          onClick={() => signOut()}
+          className="px-6 py-2 bg-myBlue text-white rounded-lg hover:bg-blue-600 transition duration-300 w-full"
+        >
+          Sign Out
+        </button>
+      </div>
+      </div>
         </div>
       )}
 
@@ -129,7 +141,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
                     <p className="text-sm text-gray-600">Status: {order.status}</p>
                   </div>
                   <div>
-                    <p className="text-lg font-semibold text-blue-500">
+                    <p className="text-lg font-semibold text-myBlue">
                       ${order.total.toFixed(2)}
                     </p>
                   </div>

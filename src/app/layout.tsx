@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { CartProvider } from "./cart/context/CartContext";
+import { WishlistProvider } from "./(pages)/(public)/wishlist/ContextWishlist/WishlistContext";
+import SessionWrapper from "./api/auth/SessionWrapper";
+import { ToastContainer } from "react-toastify";
+// import StripeWrapper from "./(pages)/(public)/checkout/stripe_provider/Stripe_Wrapper"; // Import StripeWrapper
+import { CartProvider } from "./(pages)/(public)/cart/context/CartContext";
 import Footer from "./components/HomeComponent/footer";
 import Header from "./components/HomeComponent/header";
 import TopHeader from "./components/HomeComponent/TopHeader";
-import { WishlistProvider } from "./wishlist/ContextWishlist/WishlistContext";
-
+// import CartProviderStripe from "./(pages)/(public)/components/CartProviderStripe";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -30,18 +33,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <CartProvider>
-          <WishlistProvider>
-            <TopHeader />
-            <Header />
-            {children}
-          </WishlistProvider>
+      <SessionWrapper>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          {/* <CartProviderStripe> */}
+          <CartProvider>  
+            <WishlistProvider>
+              <TopHeader />
+              <Header />
+              {children}
+              <ToastContainer />
+            </WishlistProvider>
+          </CartProvider>
+          {/* </CartProviderStripe> */}
+          {/* <StripeWrapper /> */}
           <Footer />
-        </CartProvider>
-      </body>
+        </body>
+      </SessionWrapper>
     </html>
   );
 }

@@ -9,15 +9,13 @@ export default function ProductCardSlide() {
     <div>
       <ul className="flex justify-start gap-5 pl-[50px] my-10">
         <Link href="/">
-          <li className={`${montserrat.className} hover:text-blue-500`}>
-            Home
-          </li>
+          <li className={`${montserrat.className} `}>Home</li>
         </Link>
         <IoIosArrowForward className="mt-1" />
         <Link href="/shop">
-          <li className={`${montserrat.className} hover:text-blue-500`}>
-            Shop          </li>
-        </Link>      </ul>
+          <li className={`${montserrat.className} `}>Shop</li>
+        </Link>
+      </ul>
     </div>
   );
 }

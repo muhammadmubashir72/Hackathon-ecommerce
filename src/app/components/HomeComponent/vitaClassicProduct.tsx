@@ -1,6 +1,5 @@
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
-import React from "react";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"] });
 
 const Carousel_2 = () => {
@@ -11,28 +10,28 @@ const Carousel_2 = () => {
         {/* Content Section */}
         <div className="w-full lg:w-[509px] h-auto space-y-6 lg:space-y-8">
           <h5
-            className={`${montserrat.className} font-bold text-sm sm:text-base lg:text-lg text-white hover:text-blue-500`}
+            className={`${montserrat.className} font-bold text-sm sm:text-base lg:text-lg text-white`}
           >
             SUMMER 2020
           </h5>
           <h1
-            className={`${montserrat.className} font-bold text-2xl sm:text-3xl lg:text-4xl text-white hover:text-blue-500`}
+            className={`${montserrat.className} font-bold text-2xl sm:text-3xl lg:text-4xl text-white`}
           >
             Vita Classic Product
           </h1>
           <p
-            className={`${montserrat.className} font-normal text-sm sm:text-base lg:text-lg text-white hover:text-blue-500`}
+            className={`${montserrat.className} font-normal text-sm sm:text-base lg:text-lg text-white`}
           >
             We know how large objects will act, We know how are objects will
             act, We know
           </p>
           <div className="flex items-center space-x-4">
             <h3
-              className={`${montserrat.className} font-bold text-lg sm:text-xl lg:text-2xl text-white hover:text-blue-500`}
+              className={`${montserrat.className} font-bold text-lg sm:text-xl lg:text-2xl text-white`}
             >
               $16.48
             </h3>
-            <button className="w-full sm:w-auto px-6 py-3 text-sm sm:text-base lg:text-lg bg-myGreen text-white rounded-lg hover:text-blue-500">
+            <button className="w-full sm:w-auto px-6 py-3 text-sm sm:text-base lg:text-lg bg-myGreen text-white rounded-lg">
               ADD TO CART
             </button>
           </div>
@@ -45,7 +44,7 @@ const Carousel_2 = () => {
             alt="Product"
             width={510}
             height={500}
-            className="w-full h-full object-contain transform transition duration-500 hover:scale-110"
+            className="w-full h-full object-contain "
           />
         </div>
       </div>

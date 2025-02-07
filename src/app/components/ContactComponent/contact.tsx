@@ -11,33 +11,33 @@ export default function ContactSection() {
       <div className="w-full flex flex-col mx-auto items-start mt-16 lg:mt-36 px-4 lg:px-0 space-y-10">
         <div>
           <h5
-            className={`${montserrat.className} text-center font-bold text-[16px] text-myDark hover:text-blue-500`}
+            className={`${montserrat.className} text-center font-bold text-[16px] text-myDark `}
           >
             CONTACT US
           </h5>
         </div>
         <div className="mt-4">
           <h1
-            className={`${montserrat.className} text-start font-bold text-3xl lg:text-5xl text-myDark hover:text-blue-500`}
+            className={`${montserrat.className} text-start font-bold text-3xl lg:text-5xl text-myDark `}
           >
             Get in touch today!
           </h1>
         </div>
         <div className="mt-4">
           <h4
-            className={`${montserrat.className} w-full lg:w-[360px] text-start font-normal text-base lg:text-lg text-myGrey hover:text-blue-500`}
+            className={`${montserrat.className} w-full lg:w-[360px] text-start font-normal text-base lg:text-lg text-myGrey `}
           >
             We know how large objects will act, but things on a small scale
           </h4>
         </div>
         <div className="flex flex-col mt-6 mx-auto md:mx-0 lg:mx-0">
           <h4
-            className={`${montserrat.className} text-start font-bold text-lg lg:text-xl text-myDark hover:text-blue-500`}
+            className={`${montserrat.className} text-start font-bold text-lg lg:text-xl text-myDark `}
           >
             Phone : +451 215 215
           </h4>
           <h4
-            className={`${montserrat.className} text-start font-bold text-lg lg:text-xl text-myDark hover:text-blue-500`}
+            className={`${montserrat.className} text-start font-bold text-lg lg:text-xl text-myDark `}
           >
             Fax : +451 215 215
           </h4>
@@ -78,7 +78,7 @@ export default function ContactSection() {
         <Image
           src="/images/technology 1.png"
           alt="technology 1"
-          className="relative lg:w-[450px] lg:h-[645px] object-cover transform transition duration-500 hover:scale-110"
+          className="relative lg:w-[450px] lg:h-[645px] object-cover "
           width={450}
           height={645}
         />

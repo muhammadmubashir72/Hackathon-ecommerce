@@ -10,16 +10,14 @@ const About = () => {
       <div className="w-full flex flex-col space-y-10 mx-auto items-center md:items-center lg:items-start mt-16 lg:mt-36 px-4 lg:px-0">
         <div>
           <h5
-            className={`${montserrat.className} text-center font-bold text-[16px] text-myDark hover:text-blue-500
-
-0`}
+            className={`${montserrat.className} text-center font-bold text-[16px] text-myDark`}
           >
             ABOUT COMPANY
           </h5>
         </div>
         <div className="mt-4">
           <h1
-            className={`${montserrat.className} text-start font-bold text-3xl lg:text-5xl text-myDark hover:text-blue-500`}
+            className={`${montserrat.className} text-start font-bold text-3xl lg:text-5xl text-myDark `}
           >
             ABOUT US
           </h1>
@@ -27,13 +25,13 @@ const About = () => {
 
         <div className="mt-4 w-full lg:w-[376px]">
           <h4
-            className={`${montserrat.className} text-center lg:text-start font-normal text-base lg:text-lg text-myDark hover:text-blue-500`}
+            className={`${montserrat.className} text-center lg:text-start font-normal text-base lg:text-lg text-myDark`}
           >
             We know how large objects will act, but things on a small scale
           </h4>
         </div>
         <div className="w-[195px] h-[52px] flex  bg-myBlue">
-          <button className="w-[214px] h-[52px]  bg-myBlue text-white font-bold  rounded-[5px] text-sm hover:text-blue-500">
+          <button className="w-[214px] h-[52px]  bg-myBlue text-white font-bold  rounded-[5px] text-sm0">
             Get Quote Now
           </button>
         </div>
@@ -54,7 +52,7 @@ const About = () => {
         <Image
           src="/images/technology 2.png"
           alt="technology 2"
-          className="relative lg:w-[450px] lg:h-[645px] object-cover transform transition duration-500 hover:scale-110"
+          className="relative lg:w-[450px] lg:h-[645px] object-cover"
           width={450}
           height={645}
         />

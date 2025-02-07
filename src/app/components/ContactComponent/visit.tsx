@@ -9,12 +9,12 @@ export default function VisitSection() {
       {/* Office Section */}
       <div className="w-full bg-myGreyBackground py-8 px-4 text-center">
         <h6
-          className={`${montserrat.className} font-bold text-sm text-myDark hover:text-blue-500`}
+          className={`${montserrat.className} font-bold text-sm text-myDark `}
         >
           VISIT OUR OFFICE
         </h6>
         <h2
-          className={`${montserrat.className} font-normal text-2xl lg:text-4xl text-myDark mt-2 hover:text-blue-500`}
+          className={`${montserrat.className} font-normal text-2xl lg:text-4xl text-myDark mt-2 `}
         >
           We help small businesses with big ideas
         </h2>
@@ -43,7 +43,7 @@ export default function VisitSection() {
           ({ icon, title, emails, bg = "", text = "text-myDark" }, index) => (
             <div
               key={index}
-              className={` w-[328px] sm:w-1/2 lg:w-[328px] lg:h-[403px] h-[403px] p-4 flex flex-col justify-center items-center ${bg} rounded-lg transform transition duration-500 hover:scale-110`}
+              className={` w-[328px] sm:w-1/2 lg:w-[328px] lg:h-[403px] h-[403px] p-4 flex flex-col justify-center items-center ${bg} rounded-lg`}
             >
               <Image
                 src={`/images/${icon}.png`}
@@ -55,18 +55,18 @@ export default function VisitSection() {
                 {emails.map((email, i) => (
                   <h6
                     key={i}
-                    className={`${montserrat.className} text-center font-bold text-sm hover:text-blue-500 ${text}`}
+                    className={`${montserrat.className} text-center font-bold text-sm  ${text}`}
                   >
                     {email}
                   </h6>
                 ))}
               </div>
               <h5
-                className={`${montserrat.className} text-center font-bold text-lg mt-3 hover:text-blue-500 ${text}`}
+                className={`${montserrat.className} text-center font-bold text-lg mt-3  ${text}`}
               >
                 {title}
               </h5>
-              <button className="w-[189px] mt-4 text-myBlue font-bold py-2 px-4 rounded-full outline outline-1 outline-myBlue hover:text-blue-500   ">
+              <button className="w-[189px] mt-4 text-myBlue font-bold py-2 px-4 rounded-full outline outline-1 outline-myBlue    ">
                 Submit Request
               </button>
             </div>
@@ -83,16 +83,16 @@ export default function VisitSection() {
           className="mx-auto"
         />
         <h5
-          className={`${montserrat.className} font-bold text-base text-myDark mt-5 hover:text-blue-500`}
+          className={`${montserrat.className} font-bold text-base text-myDark mt-5 `}
         >
           WE Can't WAIT TO MEET YOU
         </h5>
         <h2
-          className={`${montserrat.className} font-normal text-3xl lg:text-5xl text-myDark mt-4 hover:text-blue-500`}
+          className={`${montserrat.className} font-normal text-3xl lg:text-5xl text-myDark mt-4 `}
         >
           Let’s Talk
         </h2>
-        <button className="w-48 mt-4 text-white font-bold py-2 px-6 rounded-md bg-myBlue hover:text-black">
+        <button className="w-48 mt-4 text-white font-bold py-2 px-6 rounded-md bg-myBlue" >
           Try it free now
         </button>
       </div>

@@ -17,10 +17,10 @@ export default function Pagination() {
   };
 
   return (
-    <div className="w-[260px] lg:w-[313px] md:w-[313px] h-auto lg:h-[74px] md:h-[74px] flex border-[2px] border-[#BDBDBD] rounded justify-center items-center mx-auto mt-10">
+    <div className="w-[260px] lg:w-[313px] md:w-[313px] h-auto lg:h-[74px] md:h-[74px] flex border-[2px] border-[#BDBDBD] rounded justify-center items-center mx-auto my-10">
       {/* "First" button */}
       <div className="flex justify-center bg-[#F3F3F3] items-center w-[64px] md:w-[84px] lg:w-[84px] h-[70px] border-r-[1px] border-[#BDBDBD] cursor-default">
-        <h6 className="font-normal text-sm text-[#BDBDBD] hover:text-blue-500">
+        <h6 className="font-normal text-sm text-[#BDBDBD] ">
           First
         </h6>
       </div>

@@ -33,13 +33,13 @@ export default function Card() {
 
       <div className="flex justify-center items-center space-x-4 mx-auto mt-16 px-5 sm:px-5 md:px-2 lg:px-0">
         <h2
-          className={`${montserrat.className} font-bold text-[16px] text-myDark hover:text-blue-500`}
+          className={`${montserrat.className} font-bold text-[16px] text-myDark `}
         >
           Monthly
         </h2>
         <div className="flex items-center space-x-2">
           <h2
-            className={`${montserrat.className} font-bold text-[16px] text-myDark hover:text-blue-500`}
+            className={`${montserrat.className} font-bold text-[16px] text-myDark `}
           >
             Yearly
           </h2>
@@ -60,7 +60,7 @@ export default function Card() {
         </div>
         <div className="w-[109px] h-[30px] sm:h-[40px] md:h-[44px] lg:h-[44px] rounded-full flex items-center bg-[#B2E3FF] mx-auto">
           <h6
-            className={`${montserrat.className} text-center font-bold text-[12px] md:text-[14px] lg:text-[14px] text-[#23A6F0] mx-auto hover:text-blue-500`}
+            className={`${montserrat.className} text-center font-bold text-[12px] md:text-[14px] lg:text-[14px] text-[#23A6F0] mx-auto `}
           >
             Save 25%
           </h6>
@@ -130,7 +130,7 @@ export default function Card() {
 
           <div className="w-[246px] h-[52px] rounded-md  bg-myBlue mx-auto py-4 mt-6">
             <h6
-              className={`${montserrat.className}  text-center font-bold text-[14px] items-center text-white mx-auto`}
+              className={`${montserrat.className}  text-center font-bold text-[14px] items-center text-white mx-auto hover:text-black`}
             >
               Try for free
             </h6>
@@ -139,32 +139,32 @@ export default function Card() {
 
         <div className="bg-myDark flex flex-col justify-evenly w-[327px] h-[699px] border border-myBlue rounded-md transform transition duration-500 hover:scale-110">
           <h3
-            className={`${montserrat.className} text-center font-bold text-[24px] text-white mx-auto hover:text-blue-500`}
+            className={`${montserrat.className} text-center font-bold text-[24px] text-white mx-auto `}
           >
             STANDARD
           </h3>
           <h5
-            className={`${montserrat.className} text-center font-bold text-[14px] text-white mx-auto hover:text-blue-500`}
+            className={`${montserrat.className} text-center font-bold text-[14px] text-white mx-auto `}
           >
             Organize across all apps by hand
           </h5>
           <div className="flex justify-center">
             <div>
               <h2
-                className={`${montserrat.className} text-center font-bold text-[40px] text-myBlue mx-auto hover:text-blue-500`}
+                className={`${montserrat.className} text-center font-bold text-[40px] text-myBlue mx-auto `}
               >
                 9.99
               </h2>
             </div>
             <div className="flex flex-col">
               <h3
-                className={`${montserrat.className} text-center font-bold text-[24px] text-myBlue mx-auto hover:text-black`}
+                className={`${montserrat.className} text-center font-bold text-[24px] text-myBlue mx-auto`} 
               >
                 $
               </h3>
 
               <h5
-                className={`${montserrat.className} text-center font-bold text-[14px] text-myBlue mx-auto hover:text-blue-500`}
+                className={`${montserrat.className} text-center font-bold text-[14px] text-myBlue mx-auto `}
               >
                 Per
               </h5>
@@ -174,7 +174,7 @@ export default function Card() {
             <div className="space-x-4 flex justify-center items-center">
               <IoIosCheckmark className="rounded-full bg-[#2DC071] text-white w-8 h-8 " />
               <h6
-                className={`${montserrat.className} text-center font-bold text-[14px] text-white mx-auto hover:text-blue-500`}
+                className={`${montserrat.className} text-center font-bold text-[14px] text-white mx-auto `}
               >
                 Unlimited product updates
               </h6>
@@ -182,7 +182,7 @@ export default function Card() {
             <div className="space-x-4 flex justify-center items-center">
               <IoIosCheckmark className="rounded-full bg-myLightGrey text-white w-8 h-8 " />
               <h6
-                className={`${montserrat.className} text-center font-bold text-[14px] text-white mx-auto hover:text-blue-500`}
+                className={`${montserrat.className} text-center font-bold text-[14px] text-white mx-auto `}
               >
                 1GB Cloud storage
               </h6>
@@ -190,7 +190,7 @@ export default function Card() {
             <div className="space-x-4 flex justify-center items-center">
               <IoIosCheckmark className="rounded-full bg-myLightGrey text-white w-8 h-8 " />
               <h6
-                className={`${montserrat.className} w-[173px]  text-start font-bold text-[14px] text-white mx-auto hover:text-blue-500`}
+                className={`${montserrat.className} w-[173px]  text-start font-bold text-[14px] text-white mx-auto `}
               >
                 Email and community support
               </h6>
@@ -208,19 +208,19 @@ export default function Card() {
 
         <div className="bg-white flex flex-col justify-evenly w-[327px] h-[664px] border border-myBlue rounded-md transform transition duration-500 hover:scale-110">
           <h3
-            className={`${montserrat.className} text-center font-bold text-[24px] text-myDark mx-auto hover:text-blue-500`}
+            className={`${montserrat.className} text-center font-bold text-[24px] text-myDark mx-auto `}
           >
             PREMIUM
           </h3>
           <h5
-            className={`${montserrat.className} text-center font-bold text-[14px] text-myGrey mx-auto hover:text-blue-500`}
+            className={`${montserrat.className} text-center font-bold text-[14px] text-myGrey mx-auto `}
           >
             Organize across all apps by hand
           </h5>
           <div className="flex justify-center">
             <div>
               <h2
-                className={`${montserrat.className} text-center font-bold text-[40px] text-myBlue mx-auto hover:text-blue-500`}
+                className={`${montserrat.className} text-center font-bold text-[40px] text-myBlue mx-auto `}
               >
                 19.99
               </h2>
@@ -233,7 +233,7 @@ export default function Card() {
               </h3>
 
               <h5
-                className={`${montserrat.className} text-center font-bold text-[14px] text-myBlue mx-auto hover:text-blue-500`}
+                className={`${montserrat.className} text-center font-bold text-[14px] text-myBlue mx-auto `}
               >
                 Per
               </h5>
@@ -243,7 +243,7 @@ export default function Card() {
             <div className="space-x-4 flex justify-center items-center">
               <IoIosCheckmark className="rounded-full bg-[#2DC071] text-white w-8 h-8 " />
               <h6
-                className={`${montserrat.className} text-center font-bold text-[14px] text-myDark mx-auto hover:text-blue-500`}
+                className={`${montserrat.className} text-center font-bold text-[14px] text-myDark mx-auto `}
               >
                 Unlimited product updates
               </h6>
@@ -251,7 +251,7 @@ export default function Card() {
             <div className="space-x-4 flex justify-center items-center">
               <IoIosCheckmark className="rounded-full bg-myLightGrey text-white w-8 h-8 " />
               <h6
-                className={`${montserrat.className} text-center font-bold text-[14px] text-myDark mx-auto hover:text-blue-500`}
+                className={`${montserrat.className} text-center font-bold text-[14px] text-myDark mx-auto `}
               >
                 1GB Cloud storage
               </h6>
@@ -259,7 +259,7 @@ export default function Card() {
             <div className="space-x-4 flex justify-center items-center">
               <IoIosCheckmark className="rounded-full bg-myLightGrey text-white w-8 h-8 " />
               <h6
-                className={`${montserrat.className} w-[173px]  text-start font-bold text-[14px] text-myDark mx-auto hover:text-blue-500`}
+                className={`${montserrat.className} w-[173px]  text-start font-bold text-[14px] text-myDark mx-auto `}
               >
                 Email and community support
               </h6>

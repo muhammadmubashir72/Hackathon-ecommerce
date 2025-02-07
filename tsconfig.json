@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/(pages)/(public)/Loader3D/Loader.tsx", "src/app/(pages)/(public)/Loader3D/LottieLoader.jsx", "src/app/lib/shippo.js", "src/app/api/shippingRates/route.js", "src/app/api/shipment/route.js", "src/app/(pages)/(protected)/checkout/page.tsx"],
   "exclude": ["node_modules"]
 }

@@ -8,14 +8,14 @@ const BigCompanies = () => {
 
     <div className="bg-black/[0.02] flex flex-col justify-center w-full h-auto items-center text-center mx-auto mt-40 px-6 lg:px-0">
       <h2
-        className={`${montserrat.className} font-bold text-[40px] text-myDark py-12 hover:text-blue-500`}
+        className={`${montserrat.className} font-bold text-[40px] text-myDark py-12 `}
       >
         Big Companies Are Here
       </h2>
 
       <div className="w-full h-auto lg:w-[547px] lg:h-[40px] items-center mt-5">
         <p
-          className={`${montserrat.className}  font-normal text-sm text-myGrey mt-4 hover:text-blue-500`}
+          className={`${montserrat.className}  font-normal text-sm text-myGrey mt-4 `}
         >
           Problems trying to resolve the conflict between the two major realms
           of Classical physics: Newtonian mechanics
@@ -29,7 +29,7 @@ const BigCompanies = () => {
           alt="company-img-1"
           width={153}
           height={34}
-          className=" items-center mx-auto transform transition duration-500 hover:scale-110"
+          className=" items-center mx-auto "
         />
 
         {/* Image 2 */}
@@ -38,7 +38,7 @@ const BigCompanies = () => {
           alt="company-img-2"
           width={146}
           height={59}
-          className="items-center mx-auto transform transition duration-500 hover:scale-110"
+          className="items-center mx-auto "
         />
 
         {/* Image 3 */}
@@ -47,7 +47,7 @@ const BigCompanies = () => {
           alt="company-img-3"
           width={152}
           height={15}
-          className="items-center mx-auto transform transition duration-500 hover:scale-110"
+          className="items-center mx-auto "
         />
 
         {/* Image 4 */}
@@ -56,7 +56,7 @@ const BigCompanies = () => {
           alt="company-img-4"
           width={151}
           height={42}
-          className="items-center mx-auto transform transition duration-500 hover:scale-110"
+          className="items-center mx-auto "
         />
 
         {/* Image 5 */}
@@ -65,7 +65,7 @@ const BigCompanies = () => {
           alt="company-img-5"
           width={151}
           height={62}
-          className="items-center mx-auto transform transition duration-500 hover:scale-110"
+          className="items-center mx-auto"
         />
 
         {/* Image 6 */}
@@ -74,7 +74,7 @@ const BigCompanies = () => {
           alt="company-img-6"
           width={151}
           height={72}
-          className="items-center mx-auto transform transition duration-500 hover:scale-110"
+          className="items-center mx-auto"
         />
       </div>
     </div>

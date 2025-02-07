@@ -10,19 +10,19 @@ export default function PriceSection() {
     <div>
       <div className="items-center space-y-6 mt-10">
         <h3
-          className={`${montserrat.className} text-center font-bold text-[16px] text-myDark hover:text-blue-500`}
+          className={`${montserrat.className} text-center font-bold text-[16px] text-myDark `}
         >
           PRICING
         </h3>
         <h1
-          className={`${montserrat.className} text-center font-bold text-[38px] md:text-[48px] lg:text-[58px] text-myDark hover:text-blue-500`}
+          className={`${montserrat.className} text-center font-bold text-[38px] md:text-[48px] lg:text-[58px] text-myDark `}
         >
           Simple Pricing
         </h1>
         <div className="flex justify-center sm:justify-center md:justify-center lg:justify-center space-x-4">
           <Link href="/">
             <h3
-              className={`${montserrat.className}font-bold text-sm text-myDark hover:text-blue-500`}
+              className={`${montserrat.className}font-bold text-sm text-myDark `}
             >
               Home
             </h3>
@@ -30,7 +30,7 @@ export default function PriceSection() {
           <FaAngleRight className="text-myGrey" />
           <Link href="/shop">
             <h3
-              className={`${montserrat.className}font-bold text-sm text-myGrey hover:text-blue-500`}
+              className={`${montserrat.className}font-bold text-sm text-myGrey `}
             >
               Shop
             </h3>
