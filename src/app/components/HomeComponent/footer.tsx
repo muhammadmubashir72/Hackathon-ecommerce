@@ -247,7 +247,7 @@ export default function Footer() {
             <p
               className={`${montserrat.className} mx-auto items-center w-[80%] h-full lg:w-full lg:h-full font-bold text-[12px] lg:text-[14px] text-center text-myGrey -500 mt-10 py-5`}
             >
-              Made With Love By Mubashir Saeedi All Right Reserved.
+              © 2025 Developed by Mubashir Saeedi. All Rights Reserved.
             </p>
           </div>
         </div>
